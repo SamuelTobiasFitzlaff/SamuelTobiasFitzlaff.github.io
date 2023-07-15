@@ -11,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>Samuel Tobias Fitzlaff</title>
+        <title>Samuel Fitzlaff</title>
       </Head>
       <Container>
         <Header />

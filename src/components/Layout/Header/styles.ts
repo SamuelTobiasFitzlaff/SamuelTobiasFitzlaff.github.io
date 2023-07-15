@@ -16,6 +16,10 @@ export const HeaderContainer = styled.div`
 
   display: flex;
   justify-content: space-between;
+
+  h1 {
+    margin: auto 0 auto 1rem;
+  }
 `;
 
 export const ButtonContainer = styled.div`

@@ -1,7 +1,6 @@
-import React from "react";
 import { FooterContainer } from "./styles";
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
     <FooterContainer>
       <h1>Footer</h1>
@@ -13,5 +12,4 @@ const Footer: React.FC = () => {
       </p>
     </FooterContainer>
   );
-};
-export { Footer };
+}

@@ -1,6 +1,5 @@
-import React from "react";
 import { HeaderContainer } from "./styles";
-const Header: React.FC = () => {
+export default function Header() {
   return (
     <>
       <HeaderContainer>
@@ -14,6 +13,4 @@ const Header: React.FC = () => {
       </HeaderContainer>
     </>
   );
-};
-
-export { Header };
+}

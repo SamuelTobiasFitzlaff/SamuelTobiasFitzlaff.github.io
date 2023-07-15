@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <>
       <HeaderContainer>
-        <h1>Header</h1>
+        <h1>Samuel Fitzlaff</h1>
         <ButtonContainer>
           <RegularButton>Dev</RegularButton>
           <RegularButton>Photos</RegularButton>

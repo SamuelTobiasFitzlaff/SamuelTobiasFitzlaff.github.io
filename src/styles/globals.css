@@ -1,8 +1,10 @@
 :root {
+  /* https://colorhunt.co/palette/dddddd22283130475ef05454 */
   --background-primary: #dddddd;
-  --background-secondary: #222831;
-  --accent-primary: #30475e;
+  --background-secondary: #30475e;
+  --accent-primary: #222831;
   --accent-secondary: #f05454;
+  --accent-tertiary: #dddddd;
 
   --text-primary: #222831;
   --text-secondary: #dddddd;

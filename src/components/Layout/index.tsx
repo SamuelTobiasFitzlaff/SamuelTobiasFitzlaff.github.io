@@ -1,15 +1,13 @@
-import React from "react";
-
 import { Container } from "./styles";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import Head from "next/head";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Head>
@@ -22,6 +20,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </Container>
     </>
   );
-};
+}
 
 export { Layout };

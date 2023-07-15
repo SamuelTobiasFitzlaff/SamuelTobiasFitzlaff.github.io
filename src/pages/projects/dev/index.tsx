@@ -1,7 +1,7 @@
-export default function pages() {
+export default function dev() {
   return (
     <div>
-      <h1>Pages</h1>
+      <h1>Dev</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod
         cum possimus quasi corrupti labore nisi esse blanditiis non alias vel

@@ -9,7 +9,8 @@ export const HeaderContainer = styled.div`
   right: 0;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
   backdrop-filter: blur(10px);
   height: 60px;
 `;

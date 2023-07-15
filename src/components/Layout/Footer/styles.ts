@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  background-color: #f5f5dc;
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
   padding: 20px;
 `;

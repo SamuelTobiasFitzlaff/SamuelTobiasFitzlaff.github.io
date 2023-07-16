@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
@@ -19,10 +20,11 @@ export const HeaderContainer = styled.div`
 
   h1 {
     margin: auto 0 auto 1rem;
+    font-size: 1.5rem;
   }
 `;
 
-export const ButtonContainer = styled.div`
+export const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -30,11 +32,12 @@ export const ButtonContainer = styled.div`
   gap: 0.5rem;
 `;
 
-const Button = styled.button`
+const DefaultLink = styled(Link)`
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 100vmax;
-  min-width: 6rem;
+  padding: 0.5rem 1rem;
+
   transition: filter 0.2s ease-in-out;
 
   &:hover {
@@ -42,14 +45,29 @@ const Button = styled.button`
   }
 `;
 
-export const ContactButton = styled(Button)`
+export const ContactLink = styled(DefaultLink)`
   background-color: var(--accent-secondary);
   color: var(--text-secondary);
   font-weight: 1000;
 `;
 
-export const RegularButton = styled(Button)`
+export const RegularLink = styled(DefaultLink)`
   background-color: var(--accent-tertiary);
   color: var(--text-primary);
   font-weight: 600;
+`;
+
+export const Underscore = styled.span`
+  animation: blink 1s infinite cubic-bezier(1, 0, 0, 1);
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
 `;

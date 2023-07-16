@@ -1,4 +1,6 @@
 :root {
+  font-family: "fira code", monospace;
+
   /* https://colorhunt.co/palette/dddddd22283130475ef05454 */
   --background-primary: #dddddd;
   --background-secondary: #30475e;

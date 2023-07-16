@@ -25,6 +25,11 @@
   }
 }
 
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--text-secondary);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

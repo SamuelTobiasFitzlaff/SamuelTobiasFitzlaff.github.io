@@ -21,6 +21,7 @@ export const HeaderContainer = styled.div`
   h1 {
     margin: auto 0 auto 1rem;
     font-size: 1.5rem;
+    user-select: none;
   }
 `;
 
@@ -37,6 +38,7 @@ const DefaultLink = styled(Link)`
   border: 1px solid transparent;
   border-radius: 100vmax;
   padding: 0.5rem 1rem;
+  user-select: none;
 
   transition: filter 0.2s ease-in-out;
 

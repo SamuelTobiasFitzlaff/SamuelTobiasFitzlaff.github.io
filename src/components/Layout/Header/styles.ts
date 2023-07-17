@@ -1,4 +1,4 @@
-import { Button } from "@mui/base";
+import { Button, Popper } from "@mui/base";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -32,7 +32,7 @@ export const Title = styled.h1`
   user-select: none;
   white-space: nowrap;
 
-  @media screen and (max-width: 60rem) {
+  @media screen and (max-width: 56rem) {
     font-size: 1.125rem;
   }
 `;
@@ -63,42 +63,72 @@ export const Underscore = styled.span`
   }
 `;
 
-export const LinkContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
-`;
-
 const DefaulButton = styled(Button)`
+  font-family: var(--font-family);
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 100vmax;
-  padding: 0.5rem 1rem;
-  height: fit-content;
   user-select: none;
 
+  padding-right: 1rem;
+  background-color: transparent;
   font-size: 1rem;
+  font-weight: 600;
 
   transition: filter 0.2s ease-in-out;
 
   &:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.25);
   }
 
-  @media screen and (max-width: 60rem) {
+  &:first-child {
+    padding-left: 1rem;
+  }
+
+  @media screen and (max-width: 56rem) {
     font-size: 0.875rem;
   }
 `;
 
 export const ContactButton = styled(DefaulButton)`
-  background-color: var(--accent-secondary);
-  color: var(--text-secondary);
-  font-weight: 1000;
+  color: var(--accent-secondary);
 `;
 
 export const RegularButton = styled(DefaulButton)`
-  background-color: var(--accent-tertiary);
+  color: var(--text-secondary);
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: inherit;
+
+  ${DefaulButton}:not(:first-child):before {
+    content: "";
+    border-left: 1px solid var(--text-secondary);
+    margin-right: 1rem;
+  }
+`;
+
+export const StyledPopper = styled(Popper)`
+  z-index: 101;
+`;
+
+export const StyledListbox = styled("ul").withConfig({
+  shouldForwardProp: (prop) => prop !== "ownerState",
+})`
+  box-sizing: border-box;
+
+  min-width: 120px;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+
+  background: var(--background-secondary);
+  border: 1px solid transparent;
   color: var(--text-primary);
-  font-weight: 600;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+
+  overflow: auto;
+  list-style: none;
 `;

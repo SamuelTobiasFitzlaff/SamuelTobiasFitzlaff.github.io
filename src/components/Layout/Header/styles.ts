@@ -74,11 +74,7 @@ const DefaulButton = styled(Button)`
   font-size: 1rem;
   font-weight: 600;
 
-  transition: filter 0.2s ease-in-out;
-
-  &:hover {
-    filter: brightness(1.25);
-  }
+  transition: color 0.2s ease-in-out;
 
   &:first-child {
     padding-left: 1rem;
@@ -91,10 +87,16 @@ const DefaulButton = styled(Button)`
 
 export const ContactButton = styled(DefaulButton)`
   color: var(--accent-secondary);
+  &:hover {
+    color: var(--accent-secondary-variant);
+  }
 `;
 
 export const RegularButton = styled(DefaulButton)`
   color: var(--text-secondary);
+  &:hover {
+    color: #fff;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -125,7 +127,7 @@ export const StyledListbox = styled("ul").withConfig({
 
   background: var(--background-secondary);
   border: 1px solid transparent;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 

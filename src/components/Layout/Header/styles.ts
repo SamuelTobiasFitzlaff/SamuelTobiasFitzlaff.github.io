@@ -13,50 +13,37 @@ export const HeaderContainer = styled.div`
   background-color: var(--background-secondary);
   color: var(--text-secondary);
   backdrop-filter: blur(10px);
-  height: 60px;
+  height: var(--header-height);
+  padding-inline: 1rem;
 
   display: flex;
   justify-content: space-between;
-
-  h1 {
-    margin: auto 0 auto 1rem;
-    font-size: 1.5rem;
-    user-select: none;
-  }
+  align-items: center;
+  gap: 1rem;
 `;
 
-export const LinkContainer = styled.div`
+export const Title = styled.h1`
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  padding: 0.75rem 0.5rem;
-  gap: 0.5rem;
-`;
+  align-items: center;
+  font-size: 1.25rem;
 
-const DefaultLink = styled(Link)`
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 100vmax;
-  padding: 0.5rem 1rem;
   user-select: none;
+  white-space: nowrap;
 
-  transition: filter 0.2s ease-in-out;
-
-  &:hover {
-    filter: brightness(1.1);
+  @media screen and (max-width: 60rem) {
+    font-size: 1.125rem;
   }
 `;
 
-export const ContactLink = styled(DefaultLink)`
-  background-color: var(--accent-secondary);
-  color: var(--text-secondary);
-  font-weight: 1000;
+export const TitleLink = styled(Link)`
+  color: var(--accent-secondary);
+  font-size: 1.1em;
 `;
 
-export const RegularLink = styled(DefaultLink)`
-  background-color: var(--accent-tertiary);
-  color: var(--text-primary);
-  font-weight: 600;
+export const Path = styled.span`
+  @media screen and (max-width: 50rem) {
+    display: none;
+  }
 `;
 
 export const Underscore = styled.span`
@@ -72,4 +59,44 @@ export const Underscore = styled.span`
       opacity: 0;
     }
   }
+`;
+
+export const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+`;
+
+const DefaultLink = styled(Link)`
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 100vmax;
+  padding: 0.5rem 1rem;
+  height: fit-content;
+  user-select: none;
+
+  font-size: 1rem;
+
+  transition: filter 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  @media screen and (max-width: 60rem) {
+    font-size: 0.875rem;
+  }
+`;
+
+export const ContactLink = styled(DefaultLink)`
+  background-color: var(--accent-secondary);
+  color: var(--text-secondary);
+  font-weight: 1000;
+`;
+
+export const RegularLink = styled(DefaultLink)`
+  background-color: var(--accent-tertiary);
+  color: var(--text-primary);
+  font-weight: 600;
 `;

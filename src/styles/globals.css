@@ -10,6 +10,8 @@
 
   --text-primary: #222831;
   --text-secondary: #dddddd;
+
+  --header-height: 3.75rem;
 }
 
 @media (prefers-color-scheme: dark) {

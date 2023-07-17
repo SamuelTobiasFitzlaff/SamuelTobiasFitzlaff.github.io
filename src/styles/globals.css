@@ -3,10 +3,12 @@
 
   /* https://colorhunt.co/palette/dddddd22283130475ef05454 */
   --background-primary: #dddddd;
-  --background-secondary: #30475e;
+  --background-secondary: #041d35c9;
   --accent-primary: #222831;
   --accent-secondary: #f05454;
+  --accent-secondary-variant: #ff7c7c;
   --accent-tertiary: #dddddd;
+  --accent-quaternary: #30475e;
 
   --text-primary: #222831;
   --text-secondary: #dddddd;
@@ -17,10 +19,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background-primary: #222831;
-    --background-secondary: #12171f;
+    --background-secondary: #0f131ac9;
     --accent-primary: #30475e;
     --accent-secondary: #f05454;
+    --accent-secondary-variant: #ff7c7c;
     --accent-tertiary: #30475e;
+    --accent-quaternary: #12171f;
 
     --text-primary: #dddddd;
     --text-secondary: #dddddd;

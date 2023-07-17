@@ -1,7 +1,7 @@
-export default function qualifications() {
+export default function experience() {
   return (
     <div>
-      <h1>Qualifications</h1>
+      <h1>Experience</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod
         cum possimus quasi corrupti labore nisi esse blanditiis non alias vel

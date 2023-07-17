@@ -1,3 +1,4 @@
+import { Button, Popper } from "@mui/base";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -9,7 +10,8 @@ export const HeaderContainer = styled.div`
   left: 0;
   right: 0;
 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
+    0 0 30px var(--accent-quaternary) inset;
   background-color: var(--background-secondary);
   color: var(--text-secondary);
   backdrop-filter: blur(10px);
@@ -30,7 +32,7 @@ export const Title = styled.h1`
   user-select: none;
   white-space: nowrap;
 
-  @media screen and (max-width: 60rem) {
+  @media screen and (max-width: 56rem) {
     font-size: 1.125rem;
   }
 `;
@@ -61,42 +63,74 @@ export const Underscore = styled.span`
   }
 `;
 
-export const LinkContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
-`;
-
-const DefaultLink = styled(Link)`
+const DefaulButton = styled(Button)`
+  font-family: var(--font-family);
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 100vmax;
-  padding: 0.5rem 1rem;
-  height: fit-content;
   user-select: none;
 
+  padding-right: 1rem;
+  background-color: transparent;
   font-size: 1rem;
+  font-weight: 600;
 
-  transition: filter 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 
-  &:hover {
-    filter: brightness(1.1);
+  &:first-child {
+    padding-left: 1rem;
   }
 
-  @media screen and (max-width: 60rem) {
+  @media screen and (max-width: 56rem) {
     font-size: 0.875rem;
   }
 `;
 
-export const ContactLink = styled(DefaultLink)`
-  background-color: var(--accent-secondary);
-  color: var(--text-secondary);
-  font-weight: 1000;
+export const ContactButton = styled(DefaulButton)`
+  color: var(--accent-secondary);
+  &:hover {
+    color: var(--accent-secondary-variant);
+  }
 `;
 
-export const RegularLink = styled(DefaultLink)`
-  background-color: var(--accent-tertiary);
-  color: var(--text-primary);
-  font-weight: 600;
+export const RegularButton = styled(DefaulButton)`
+  color: var(--text-secondary);
+  &:hover {
+    color: #fff;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: inherit;
+
+  ${DefaulButton}:not(:first-child):before {
+    content: "";
+    border-left: 1px solid var(--text-secondary);
+    margin-right: 1rem;
+  }
+`;
+
+export const StyledPopper = styled(Popper)`
+  z-index: 101;
+`;
+
+export const StyledListbox = styled("ul").withConfig({
+  shouldForwardProp: (prop) => prop !== "ownerState",
+})`
+  box-sizing: border-box;
+
+  min-width: 120px;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+
+  background: var(--background-secondary);
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+
+  overflow: auto;
+  list-style: none;
 `;

@@ -5,6 +5,9 @@ import {
   ContactLink,
   RegularLink,
   Underscore,
+  Title,
+  Path,
+  TitleLink,
 } from "./styles";
 import Link from "next/link";
 export default function Header() {
@@ -12,12 +15,11 @@ export default function Header() {
   return (
     <>
       <HeaderContainer>
-        <h1>
-          <Link style={{ color: "var(--accent-secondary)" }} href={"/"}>
-            Samuel@Fitzlaff
-          </Link>
-          :~{`${asPath !== "/" ? asPath : ""} `}$<Underscore>_</Underscore>
-        </h1>
+        <Title>
+          <TitleLink href={"/"}>Samuel@Fitzlaff</TitleLink>:~
+          <Path>{asPath !== "/" && asPath}</Path>&nbsp;$
+          <Underscore>_</Underscore>
+        </Title>
         <LinkContainer>
           <RegularLink href="/projects/dev">Dev</RegularLink>
           <RegularLink href="/projects/photos">Photos</RegularLink>

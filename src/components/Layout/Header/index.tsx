@@ -81,7 +81,9 @@ export default function Header() {
             Projects^
           </RegularButton>
           <RegularButton>
-            <Link href="/experience">Experience</Link>
+            <Link href="/experience" tabIndex={-1}>
+              Experience
+            </Link>
           </RegularButton>
           <Menu
             actions={menuActions}

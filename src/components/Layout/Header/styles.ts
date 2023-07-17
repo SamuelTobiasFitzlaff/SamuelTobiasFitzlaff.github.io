@@ -1,3 +1,4 @@
+import { Button } from "@mui/base";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -69,7 +70,7 @@ export const LinkContainer = styled.div`
   gap: 0.5rem;
 `;
 
-const DefaultLink = styled(Link)`
+const DefaulButton = styled(Button)`
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 100vmax;
@@ -90,13 +91,13 @@ const DefaultLink = styled(Link)`
   }
 `;
 
-export const ContactLink = styled(DefaultLink)`
+export const ContactButton = styled(DefaulButton)`
   background-color: var(--accent-secondary);
   color: var(--text-secondary);
   font-weight: 1000;
 `;
 
-export const RegularLink = styled(DefaultLink)`
+export const RegularButton = styled(DefaulButton)`
   background-color: var(--accent-tertiary);
   color: var(--text-primary);
   font-weight: 600;

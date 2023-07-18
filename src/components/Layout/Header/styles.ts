@@ -1,6 +1,6 @@
 import { Button, MenuItem, Popper } from "@mui/base";
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -48,10 +48,8 @@ export const Path = styled.span`
   }
 `;
 
-export const Underscore = styled.span`
-  animation: blink 1s infinite cubic-bezier(1, 0, 0, 1);
-  @keyframes blink {
-    0% {
+const UnderscoreBlink = keyframes`
+0% {
       opacity: 0;
     }
     50% {
@@ -60,7 +58,10 @@ export const Underscore = styled.span`
     to {
       opacity: 0;
     }
-  }
+`;
+
+export const Underscore = styled.span`
+  animation: ${UnderscoreBlink} 1s infinite cubic-bezier(1, 0, 0, 1);
 `;
 
 const DefaultButton = styled(Button)`
@@ -117,6 +118,17 @@ export const StyledPopper = styled(Popper)`
   z-index: 101;
 `;
 
+const ListIn = keyframes`
+  from {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 export const StyledListbox = styled("ul").withConfig({
   shouldForwardProp: (prop) => prop !== "ownerState",
 })`
@@ -136,6 +148,8 @@ export const StyledListbox = styled("ul").withConfig({
 
   overflow: auto;
   list-style: none;
+
+  animation: ${ListIn} 0.2s ease-out;
 `;
 
 export const MenuLink = styled(Link).withConfig({

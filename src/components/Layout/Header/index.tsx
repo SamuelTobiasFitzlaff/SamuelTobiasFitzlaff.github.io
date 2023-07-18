@@ -1,4 +1,4 @@
-import { MouseEvent, useCallback, useEffect, useRef, useState } from "react";
+import { MouseEvent, useCallback, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import {
   HeaderContainer,

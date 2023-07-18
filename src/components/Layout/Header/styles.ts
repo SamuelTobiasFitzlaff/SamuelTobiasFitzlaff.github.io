@@ -1,6 +1,6 @@
 import { Button, MenuItem, Popper } from "@mui/base";
 import Link from "next/link";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -64,19 +64,100 @@ export const Underscore = styled.span`
   animation: ${UnderscoreBlink} 1s infinite cubic-bezier(1, 0, 0, 1);
 `;
 
-const DefaultButton = styled(Button)`
+const inLeft = keyframes`
+  from { transform: translateX(-101%); }
+  to { transform: translateX(0); };
+  `;
+
+const inRight = keyframes`
+  from { transform: translateX(101%); }
+  to { transform: translateX(0); };
+  `;
+
+const outLeft = keyframes`
+  from { transform: translateX(0); }
+  to { transform: translateX(-101%); };
+  `;
+
+const outRight = keyframes`
+  from { transform: translateX(0); }
+  to { transform: translateX(101%); };
+  `;
+
+const DefaultButton = styled(Button).withConfig({
+  shouldForwardProp: (prop) => prop !== "direction",
+})<{ direction: { direction: number; hover: boolean } }>`
   font-family: var(--font-family);
   cursor: pointer;
-  border: 1px solid transparent;
+  outline: 1px solid transparent;
+  border: none;
   user-select: none;
   height: inherit;
+  position: relative;
 
   padding-right: 1rem;
   background-color: transparent;
   font-size: 1rem;
   font-weight: 600;
+  overflow: hidden;
 
   transition: color 0.2s ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-primary);
+
+    z-index: -1;
+    opacity: 0;
+
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &::after {
+    ${({ direction }) =>
+      direction.direction === 1 &&
+      direction.hover &&
+      css`
+        animation: ${inRight} 0.25s ease forwards;
+        opacity: 0.25;
+      `}
+    ${({ direction }) =>
+      direction.direction === 3 &&
+      direction.hover &&
+      css`
+        animation: ${inLeft} 0.25s ease forwards;
+        opacity: 0.25;
+      `}
+    
+    ${({ direction }) =>
+      direction.direction === 3 &&
+      !direction.hover &&
+      css`
+        animation: ${outLeft} 0.25s ease forwards;
+        opacity: 0.25;
+      `}
+    ${({ direction }) =>
+      direction.direction === 1 &&
+      !direction.hover &&
+      css`
+        animation: ${outRight} 0.25s ease forwards;
+        opacity: 0.25;
+      `}
+
+    ${({ direction }) =>
+      direction.direction !== 1 &&
+      direction.direction !== 3 &&
+      direction.hover &&
+      css`
+        opacity: 0.25;
+      `}
+  }
 
   @media screen and (max-width: 56rem) {
     font-size: 0.875rem;
@@ -85,16 +166,10 @@ const DefaultButton = styled(Button)`
 
 export const ContactButton = styled(DefaultButton)`
   color: var(--accent-secondary);
-  &:hover {
-    color: var(--accent-secondary-variant);
-  }
 `;
 
 export const RegularButton = styled(DefaultButton)`
   color: var(--text-secondary);
-  &:hover {
-    color: #fff;
-  }
 `;
 
 export const ButtonContainer = styled.div`

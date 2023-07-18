@@ -11,6 +11,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
         <title>Samuel Fitzlaff</title>
       </Head>
       <Container>

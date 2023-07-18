@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import {
   HeaderContainer,
@@ -16,12 +16,20 @@ import {
 import Link from "next/link";
 import { Menu, MenuActions, MenuItem } from "@mui/base";
 import { ListActionTypes } from "@mui/base/useList";
+
+import { CheckDirection } from "../../../utils/DirectionAware";
+
 export default function Header() {
   const { asPath } = useRouter();
 
   const [projectsButtonElement, setProjectsButtonElement] =
     useState<HTMLButtonElement | null>(null);
   const [isOpenProjects, setIsOpenProjects] = useState(false);
+  const [direction, setDirection] = useState([
+    { direction: 0, hover: false },
+    { direction: 0, hover: false },
+    { direction: 0, hover: false },
+  ]);
 
   const menuActions = useRef<MenuActions>(null);
   const preventReopenProjects = useRef(false);
@@ -60,6 +68,30 @@ export default function Header() {
     }
   };
 
+  const handleMouseEvent = (e: MouseEvent, button: number, hover: boolean) => {
+    if (!e) return;
+    const target = e.currentTarget as HTMLElement;
+    const element = {
+      target: {
+        offsetWidth: target.offsetWidth,
+        offsetHeight: target.offsetHeight,
+        offsetLeft: target.offsetLeft,
+        offsetTop: target.offsetTop,
+      },
+      clientX: e.clientX,
+      clientY: e.clientY,
+    };
+
+    setDirection((prevDirection) => {
+      const updatedDirection = [...prevDirection];
+      updatedDirection[button] = {
+        direction: CheckDirection(element),
+        hover: hover,
+      };
+      return updatedDirection;
+    });
+  };
+
   return (
     <>
       <HeaderContainer>
@@ -78,11 +110,28 @@ export default function Header() {
             aria-controls={isOpenProjects ? "projects-menu" : undefined}
             aria-expanded={isOpenProjects || undefined}
             aria-haspopup="menu"
+            onMouseEnter={(e: MouseEvent) => {
+              handleMouseEvent(e, 0, true);
+            }}
+            onMouseLeave={(e: MouseEvent) => {
+              handleMouseEvent(e, 0, false);
+            }}
+            direction={direction[0]}
           >
             Projects^
           </RegularButton>
           <Link style={{ height: "inherit" }} href="/experience" tabIndex={-1}>
-            <RegularButton>Experience</RegularButton>
+            <RegularButton
+              onMouseEnter={(e: MouseEvent) => {
+                handleMouseEvent(e, 1, true);
+              }}
+              onMouseLeave={(e: MouseEvent) => {
+                handleMouseEvent(e, 1, false);
+              }}
+              direction={direction[1]}
+            >
+              Experience
+            </RegularButton>
           </Link>
           <Menu
             actions={menuActions}
@@ -117,7 +166,17 @@ export default function Header() {
             </MenuItem>
           </Menu>
 
-          <ContactButton>Contact</ContactButton>
+          <ContactButton
+            onMouseEnter={(e: MouseEvent) => {
+              handleMouseEvent(e, 2, true);
+            }}
+            onMouseLeave={(e: MouseEvent) => {
+              handleMouseEvent(e, 2, false);
+            }}
+            direction={direction[2]}
+          >
+            Contact
+          </ContactButton>
         </ButtonContainer>
       </HeaderContainer>
     </>

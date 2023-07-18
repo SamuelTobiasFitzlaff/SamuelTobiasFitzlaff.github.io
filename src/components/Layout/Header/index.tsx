@@ -11,6 +11,7 @@ import {
   TitleLink,
   StyledPopper,
   StyledListbox,
+  MenuLink,
 } from "./styles";
 import Link from "next/link";
 import { Menu, MenuActions, MenuItem } from "@mui/base";
@@ -74,15 +75,15 @@ export default function Header() {
             type="button"
             onKeyDown={handleProjectsKeyDown}
             ref={updateAnchorProjects}
-            aria-controls={isOpenProjects ? "simple-menu" : undefined}
+            aria-controls={isOpenProjects ? "projects-menu" : undefined}
             aria-expanded={isOpenProjects || undefined}
             aria-haspopup="menu"
           >
             Projects^
           </RegularButton>
-          <RegularButton>
-            <Link href="/experience">Experience</Link>
-          </RegularButton>
+          <Link style={{ height: "inherit" }} href="/experience" tabIndex={-1}>
+            <RegularButton>Experience</RegularButton>
+          </Link>
           <Menu
             actions={menuActions}
             open={isOpenProjects}
@@ -91,22 +92,28 @@ export default function Header() {
             }}
             anchorEl={projectsButtonElement}
             slots={{ root: StyledPopper, listbox: StyledListbox }}
-            slotProps={{ listbox: { id: "simple-menu" } }}
+            slotProps={{ listbox: { id: "projects-menu" } }}
           >
-            <MenuItem>
-              <Link href="/projects/dev" onClick={handleProjectsItemClick}>
-                Dev
-              </Link>
+            <MenuItem
+              slots={{ root: MenuLink }}
+              slotProps={{ root: { href: "/projects/dev" } as any }}
+              onClick={handleProjectsItemClick}
+            >
+              Dev
             </MenuItem>
-            <MenuItem>
-              <Link href="/projects/photos" onClick={handleProjectsItemClick}>
-                Photos
-              </Link>
+            <MenuItem
+              slots={{ root: MenuLink }}
+              slotProps={{ root: { href: "/projects/photos" } as any }}
+              onClick={handleProjectsItemClick}
+            >
+              Photos
             </MenuItem>
-            <MenuItem>
-              <Link href="/projects/blender" onClick={handleProjectsItemClick}>
-                Blender
-              </Link>
+            <MenuItem
+              slots={{ root: MenuLink }}
+              slotProps={{ root: { href: "/projects/blender" } as any }}
+              onClick={handleProjectsItemClick}
+            >
+              Blender
             </MenuItem>
           </Menu>
 

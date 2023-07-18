@@ -1,6 +1,6 @@
-import { Button, Popper } from "@mui/base";
+import { Button, MenuItem, Popper } from "@mui/base";
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -48,10 +48,8 @@ export const Path = styled.span`
   }
 `;
 
-export const Underscore = styled.span`
-  animation: blink 1s infinite cubic-bezier(1, 0, 0, 1);
-  @keyframes blink {
-    0% {
+const UnderscoreBlink = keyframes`
+0% {
       opacity: 0;
     }
     50% {
@@ -60,14 +58,18 @@ export const Underscore = styled.span`
     to {
       opacity: 0;
     }
-  }
 `;
 
-const DefaulButton = styled(Button)`
+export const Underscore = styled.span`
+  animation: ${UnderscoreBlink} 1s infinite cubic-bezier(1, 0, 0, 1);
+`;
+
+const DefaultButton = styled(Button)`
   font-family: var(--font-family);
   cursor: pointer;
   border: 1px solid transparent;
   user-select: none;
+  height: inherit;
 
   padding-right: 1rem;
   background-color: transparent;
@@ -76,23 +78,19 @@ const DefaulButton = styled(Button)`
 
   transition: color 0.2s ease-in-out;
 
-  &:first-child {
-    padding-left: 1rem;
-  }
-
   @media screen and (max-width: 56rem) {
     font-size: 0.875rem;
   }
 `;
 
-export const ContactButton = styled(DefaulButton)`
+export const ContactButton = styled(DefaultButton)`
   color: var(--accent-secondary);
   &:hover {
     color: var(--accent-secondary-variant);
   }
 `;
 
-export const RegularButton = styled(DefaulButton)`
+export const RegularButton = styled(DefaultButton)`
   color: var(--text-secondary);
   &:hover {
     color: #fff;
@@ -105,7 +103,11 @@ export const ButtonContainer = styled.div`
   flex-wrap: nowrap;
   height: inherit;
 
-  ${DefaulButton}:not(:first-child):before {
+  ${DefaultButton}:first-child:not(a>${DefaultButton}) {
+    padding-left: 1rem;
+  }
+
+  ${DefaultButton}:not(:first-child):before, a>${RegularButton}:before {
     content: "";
     border-left: 1px solid var(--text-secondary);
     margin-right: 1rem;
@@ -116,13 +118,26 @@ export const StyledPopper = styled(Popper)`
   z-index: 101;
 `;
 
+const ListIn = keyframes`
+  from {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 export const StyledListbox = styled("ul").withConfig({
   shouldForwardProp: (prop) => prop !== "ownerState",
 })`
   box-sizing: border-box;
 
+  display: flex;
+  flex-direction: column;
+
   min-width: 120px;
-  padding: 0.75rem 1rem;
   border-radius: 0 0 0.25rem 0.25rem;
 
   background: var(--background-secondary);
@@ -133,4 +148,18 @@ export const StyledListbox = styled("ul").withConfig({
 
   overflow: auto;
   list-style: none;
+
+  animation: ${ListIn} 0.2s ease-out;
+`;
+
+export const MenuLink = styled(Link).withConfig({
+  shouldForwardProp: (prop) => prop !== "ownerState",
+})`
+  padding: 0.75rem 1rem;
+
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #fff;
+  }
 `;

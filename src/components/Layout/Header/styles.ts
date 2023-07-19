@@ -15,8 +15,6 @@ export const HeaderContainer = styled.div`
   color: rgb(var(--text-secondary));
   backdrop-filter: blur(10px);
   height: var(--header-height);
-  padding-inline: 1rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +25,7 @@ export const Title = styled.h1`
   display: flex;
   align-items: center;
   font-size: 1.25rem;
+  margin-left: 1rem;
 
   user-select: none;
   white-space: nowrap;

@@ -6,12 +6,16 @@ import {
   StyledPopper,
   StyledListbox,
   MenuLink,
+  HamburgerMenu,
 } from "./styles";
 import Link from "next/link";
 import { Menu, MenuActions, MenuItem } from "@mui/base";
 import { ListActionTypes } from "@mui/base/useList";
 
 import { CheckDirection } from "../../utils/DirectionAware";
+import NavBar from "../NavBar";
+
+import { Menu as FeatherMenu } from "react-feather";
 
 export default function NavButtons() {
   const [projectsButtonElement, setProjectsButtonElement] =
@@ -84,84 +88,89 @@ export default function NavButtons() {
     });
   };
   return (
-    <ButtonContainer>
-      <RegularButton
-        onClick={handleProjectsClick}
-        type="button"
-        onKeyDown={handleProjectsKeyDown}
-        ref={updateAnchorProjects}
-        aria-controls={isOpenProjects ? "projects-menu" : undefined}
-        aria-expanded={isOpenProjects || undefined}
-        aria-haspopup="menu"
-        onMouseEnter={(e: MouseEvent) => {
-          handleMouseEvent(e, 0, true);
-        }}
-        onMouseLeave={(e: MouseEvent) => {
-          handleMouseEvent(e, 0, false);
-        }}
-        direction={direction[0]}
-      >
-        Projects^
-      </RegularButton>
-
-      <Menu
-        actions={menuActions}
-        open={isOpenProjects}
-        onOpenChange={(open) => {
-          setIsOpenProjects(open);
-        }}
-        anchorEl={projectsButtonElement}
-        slots={{ root: StyledPopper, listbox: StyledListbox }}
-        slotProps={{ listbox: { id: "projects-menu" } }}
-      >
-        <MenuItem
-          slots={{ root: MenuLink }}
-          slotProps={{ root: { href: "/projects/dev" } as any }}
-          onClick={handleProjectsItemClick}
-        >
-          Dev
-        </MenuItem>
-        <MenuItem
-          slots={{ root: MenuLink }}
-          slotProps={{ root: { href: "/projects/photos" } as any }}
-          onClick={handleProjectsItemClick}
-        >
-          Photos
-        </MenuItem>
-        <MenuItem
-          slots={{ root: MenuLink }}
-          slotProps={{ root: { href: "/projects/blender" } as any }}
-          onClick={handleProjectsItemClick}
-        >
-          Blender
-        </MenuItem>
-      </Menu>
-
-      <Link style={{ height: "inherit" }} href="/experience" tabIndex={-1}>
+    <>
+      <ButtonContainer>
         <RegularButton
+          onClick={handleProjectsClick}
+          type="button"
+          onKeyDown={handleProjectsKeyDown}
+          ref={updateAnchorProjects}
+          aria-controls={isOpenProjects ? "projects-menu" : undefined}
+          aria-expanded={isOpenProjects || undefined}
+          aria-haspopup="menu"
           onMouseEnter={(e: MouseEvent) => {
-            handleMouseEvent(e, 1, true);
+            handleMouseEvent(e, 0, true);
           }}
           onMouseLeave={(e: MouseEvent) => {
-            handleMouseEvent(e, 1, false);
+            handleMouseEvent(e, 0, false);
           }}
-          direction={direction[1]}
+          direction={direction[0]}
         >
-          Experience
+          Projects^
         </RegularButton>
-      </Link>
 
-      <ContactButton
-        onMouseEnter={(e: MouseEvent) => {
-          handleMouseEvent(e, 2, true);
-        }}
-        onMouseLeave={(e: MouseEvent) => {
-          handleMouseEvent(e, 2, false);
-        }}
-        direction={direction[2]}
-      >
-        Contact
-      </ContactButton>
-    </ButtonContainer>
+        <Menu
+          actions={menuActions}
+          open={isOpenProjects}
+          onOpenChange={(open) => {
+            setIsOpenProjects(open);
+          }}
+          anchorEl={projectsButtonElement}
+          slots={{ root: StyledPopper, listbox: StyledListbox }}
+          slotProps={{ listbox: { id: "projects-menu" } }}
+        >
+          <MenuItem
+            slots={{ root: MenuLink }}
+            slotProps={{ root: { href: "/projects/dev" } as any }}
+            onClick={handleProjectsItemClick}
+          >
+            Dev
+          </MenuItem>
+          <MenuItem
+            slots={{ root: MenuLink }}
+            slotProps={{ root: { href: "/projects/photos" } as any }}
+            onClick={handleProjectsItemClick}
+          >
+            Photos
+          </MenuItem>
+          <MenuItem
+            slots={{ root: MenuLink }}
+            slotProps={{ root: { href: "/projects/blender" } as any }}
+            onClick={handleProjectsItemClick}
+          >
+            Blender
+          </MenuItem>
+        </Menu>
+
+        <Link style={{ height: "inherit" }} href="/experience" tabIndex={-1}>
+          <RegularButton
+            onMouseEnter={(e: MouseEvent) => {
+              handleMouseEvent(e, 1, true);
+            }}
+            onMouseLeave={(e: MouseEvent) => {
+              handleMouseEvent(e, 1, false);
+            }}
+            direction={direction[1]}
+          >
+            Experience
+          </RegularButton>
+        </Link>
+
+        <ContactButton
+          onMouseEnter={(e: MouseEvent) => {
+            handleMouseEvent(e, 2, true);
+          }}
+          onMouseLeave={(e: MouseEvent) => {
+            handleMouseEvent(e, 2, false);
+          }}
+          direction={direction[2]}
+        >
+          Contact
+        </ContactButton>
+      </ButtonContainer>
+      <HamburgerMenu>
+        <FeatherMenu size="2rem" />
+      </HamburgerMenu>
+    </>
   );
 }

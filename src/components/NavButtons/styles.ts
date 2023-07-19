@@ -195,6 +195,10 @@ export const MenuLink = styled(Link).withConfig({
   }
 `;
 
+export const ButtonLink = styled(Link)`
+  height: inherit;
+`;
+
 export const HamburgerMenu = styled(Button)`
   display: none;
 

@@ -7,19 +7,24 @@ import {
   StyledListbox,
   MenuLink,
   HamburgerMenu,
+  ButtonLink,
 } from "./styles";
 import Link from "next/link";
 import { Menu, MenuActions, MenuItem } from "@mui/base";
 import { ListActionTypes } from "@mui/base/useList";
 
 import { CheckDirection } from "../../utils/DirectionAware";
-import NavBar from "../NavBar";
 
 import { Menu as FeatherMenu } from "react-feather";
+import MobileNavigation from "../MobileNavigation";
 
 export default function NavButtons() {
   const [projectsButtonElement, setProjectsButtonElement] =
     useState<HTMLButtonElement | null>(null);
+
+  const [mobileButtonElement, setMobileButtonElement] =
+    useState<HTMLButtonElement | null>(null);
+
   const [isOpenProjects, setIsOpenProjects] = useState(false);
   const [direction, setDirection] = useState([
     { direction: 0, hover: false },
@@ -27,11 +32,17 @@ export default function NavButtons() {
     { direction: 0, hover: false },
   ]);
 
+  const [isOpenMobile, setIsOpenMobile] = useState(false);
+
   const menuActions = useRef<MenuActions>(null);
   const preventReopenProjects = useRef(false);
 
   const updateAnchorProjects = useCallback((node: HTMLButtonElement | null) => {
     setProjectsButtonElement(node);
+  }, []);
+
+  const updateAnchorMobile = useCallback((node: HTMLButtonElement | null) => {
+    setMobileButtonElement(node);
   }, []);
 
   const handleProjectsClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -142,7 +153,7 @@ export default function NavButtons() {
           </MenuItem>
         </Menu>
 
-        <Link style={{ height: "inherit" }} href="/experience" tabIndex={-1}>
+        <ButtonLink href="/experience" tabIndex={-1}>
           <RegularButton
             onMouseEnter={(e: MouseEvent) => {
               handleMouseEvent(e, 1, true);
@@ -154,7 +165,7 @@ export default function NavButtons() {
           >
             Experience
           </RegularButton>
-        </Link>
+        </ButtonLink>
 
         <ContactButton
           onMouseEnter={(e: MouseEvent) => {
@@ -168,9 +179,18 @@ export default function NavButtons() {
           Contact
         </ContactButton>
       </ButtonContainer>
-      <HamburgerMenu>
+      <HamburgerMenu
+        onClick={() => {
+          setIsOpenMobile((prev) => !prev);
+        }}
+        ref={updateAnchorMobile}
+      >
         <FeatherMenu size="2rem" />
       </HamburgerMenu>
+      <MobileNavigation
+        open={isOpenMobile}
+        buttonElement={mobileButtonElement}
+      />
     </>
   );
 }

@@ -136,6 +136,9 @@ export const ButtonContainer = styled.div`
     border-left: 1px solid rgb(var(--text-secondary));
     margin-right: 1rem;
   }
+  @media screen and (max-width: 40rem) {
+    display: none;
+  }
 `;
 
 export const StyledPopper = styled(Popper)`
@@ -189,5 +192,24 @@ export const MenuLink = styled(Link).withConfig({
   }
   &:hover {
     background-color: rgb(var(--accent-primary), 0.25);
+  }
+`;
+
+export const ButtonLink = styled(Link)`
+  height: inherit;
+`;
+
+export const HamburgerMenu = styled(Button)`
+  display: none;
+
+  height: inherit;
+  aspect-ratio: 1/1;
+
+  background-color: transparent;
+  outline: 1px solid transparent;
+  border: none;
+
+  @media screen and (max-width: 40rem) {
+    display: block;
   }
 `;

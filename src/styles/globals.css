@@ -8,8 +8,8 @@
   --accent-secondary: 240, 84, 84; /* #f05454 */
   --accent-tertiary: 48, 71, 94; /* #30475e */
 
-  --text-primary: 34, 40, 49;
-  --text-secondary: 221, 221, 221;
+  --text-primary: 34, 40, 49; /* #222831 */
+  --text-secondary: 221, 221, 221; /* #dddddd */
 
   --header-height: 3.75rem;
 }
@@ -22,8 +22,8 @@
     --accent-secondary: 240, 84, 84; /* #f05454 */
     --accent-tertiary: 18, 23, 31; /* #12171f */
 
-    --text-primary: 221, 221, 221;
-    --text-secondary: 221, 221, 221;
+    --text-primary: 221, 221, 221; /* #dddddd */
+    --text-secondary: 221, 221, 221; /* #dddddd */
   }
 }
 

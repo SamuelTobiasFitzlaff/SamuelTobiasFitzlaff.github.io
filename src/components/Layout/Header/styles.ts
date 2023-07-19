@@ -159,6 +159,13 @@ const DefaultButton = styled(Button).withConfig({
       `}
   }
 
+  @media (hover: none) {
+    &::after {
+      content: none;
+      animation: none;
+    }
+  }
+
   @media screen and (max-width: 56rem) {
     font-size: 0.875rem;
   }

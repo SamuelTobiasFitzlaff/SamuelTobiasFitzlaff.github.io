@@ -25,7 +25,7 @@ const outRight = keyframes`
 const DefaultButton = styled(Button).withConfig({
   shouldForwardProp: (prop) => prop !== "direction",
 })<{ direction: { direction: number; hover: boolean } }>`
-  font-family: var(--font-family);
+  font-family: inherit;
   cursor: pointer;
   outline: 1px solid transparent;
   border: none;

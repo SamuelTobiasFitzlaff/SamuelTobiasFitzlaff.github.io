@@ -189,6 +189,7 @@ export default function NavButtons() {
       </HamburgerMenu>
       <MobileNavigation
         open={isOpenMobile}
+        setOpen={setIsOpenMobile}
         buttonElement={mobileButtonElement}
       />
     </>

@@ -1,4 +1,4 @@
-import { Button, MenuItem, Popper } from "@mui/base";
+import { Button, Popper } from "@mui/base";
 import Link from "next/link";
 import styled, { css, keyframes } from "styled-components";
 
@@ -39,7 +39,11 @@ const DefaultButton = styled(Button).withConfig({
   font-weight: 600;
   overflow: hidden;
 
-  transition: color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+
+  &:focus-visible {
+    background-color: rgb(var(--accent-primary), 0.25);
+  }
 
   &::after {
     content: "";
@@ -49,7 +53,7 @@ const DefaultButton = styled(Button).withConfig({
 
     width: 100%;
     height: 100%;
-    background-color: var(--accent-primary);
+    background-color: rgb(var(--accent-primary));
 
     z-index: -1;
     opacity: 0;
@@ -110,11 +114,11 @@ const DefaultButton = styled(Button).withConfig({
 `;
 
 export const ContactButton = styled(DefaultButton)`
-  color: var(--accent-secondary);
+  color: rgb(var(--accent-secondary));
 `;
 
 export const RegularButton = styled(DefaultButton)`
-  color: var(--text-secondary);
+  color: rgb(var(--text-secondary));
 `;
 
 export const ButtonContainer = styled.div`
@@ -129,7 +133,7 @@ export const ButtonContainer = styled.div`
 
   ${DefaultButton}:not(:first-child):before, a>${RegularButton}:before {
     content: "";
-    border-left: 1px solid var(--text-secondary);
+    border-left: 1px solid rgb(var(--text-secondary));
     margin-right: 1rem;
   }
 `;
@@ -160,9 +164,9 @@ export const StyledListbox = styled("ul").withConfig({
   min-width: 120px;
   border-radius: 0 0 0.25rem 0.25rem;
 
-  background: var(--background-secondary);
+  background: rgb(var(--background-secondary), 0.788);
   border: 1px solid transparent;
-  color: var(--text-secondary);
+  color: rgb(var(--text-secondary));
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 
@@ -176,10 +180,14 @@ export const MenuLink = styled(Link).withConfig({
   shouldForwardProp: (prop) => prop !== "ownerState",
 })`
   padding: 0.75rem 1rem;
+  outline: 1px solid transparent;
 
-  transition: color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
+  &:focus-visible {
+    background-color: rgb(var(--accent-primary), 0.25);
+  }
   &:hover {
-    color: #fff;
+    background-color: rgb(var(--accent-primary), 0.25);
   }
 `;

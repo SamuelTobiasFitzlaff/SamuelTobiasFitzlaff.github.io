@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  color: var(--text-primary);
+  color: vrgb(var(--text-primary));
 
   min-height: calc(100vh - var(--header-height));
   display: grid;

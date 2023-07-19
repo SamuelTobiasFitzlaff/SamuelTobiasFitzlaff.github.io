@@ -10,9 +10,9 @@ export const HeaderContainer = styled.div`
   right: 0;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
-    0 0 30px var(--accent-quaternary) inset;
-  background-color: var(--background-secondary);
-  color: var(--text-secondary);
+    0 0 30px rgb(var(--accent-tertiary)) inset;
+  background-color: rgb(var(--background-secondary), 0.788);
+  color: rgb(var(--text-secondary));
   backdrop-filter: blur(10px);
   height: var(--header-height);
   padding-inline: 1rem;
@@ -37,7 +37,7 @@ export const Title = styled.h1`
 `;
 
 export const TitleLink = styled(Link)`
-  color: var(--accent-secondary);
+  color: rgb(var(--accent-secondary));
   font-size: 1.1em;
 `;
 

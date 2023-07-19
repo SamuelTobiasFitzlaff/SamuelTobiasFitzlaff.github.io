@@ -2,36 +2,34 @@
   font-family: "fira code", monospace;
 
   /* https://colorhunt.co/palette/dddddd22283130475ef05454 */
-  --background-primary: #dddddd;
-  --background-secondary: #041d35c9;
-  --accent-primary: #222831;
-  --accent-secondary: #f05454;
-  --accent-tertiary: #dddddd;
-  --accent-quaternary: #30475e;
+  --background-primary: 221, 221, 221; /* #dddddd */
+  --background-secondary: 4, 29, 53; /* #041d35 */
+  --accent-primary: 34, 40, 49; /* #222831 */
+  --accent-secondary: 240, 84, 84; /* #f05454 */
+  --accent-tertiary: 48, 71, 94; /* #30475e */
 
-  --text-primary: #222831;
-  --text-secondary: #dddddd;
+  --text-primary: 34, 40, 49;
+  --text-secondary: 221, 221, 221;
 
   --header-height: 3.75rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-primary: #222831;
-    --background-secondary: #0f131ac9;
-    --accent-primary: #30475e;
-    --accent-secondary: #f05454;
-    --accent-tertiary: #30475e;
-    --accent-quaternary: #12171f;
+    --background-primary: 34, 40, 49; /* #222831 */
+    --background-secondary: 15, 19, 26; /* #0f131a */
+    --accent-primary: 48, 71, 94; /* #30475e */
+    --accent-secondary: 240, 84, 84; /* #f05454 */
+    --accent-tertiary: 18, 23, 31; /* #12171f */
 
-    --text-primary: #dddddd;
-    --text-secondary: #dddddd;
+    --text-primary: 221, 221, 221;
+    --text-secondary: 221, 221, 221;
   }
 }
 
 ::selection {
-  background-color: var(--accent-primary);
-  color: var(--text-secondary);
+  background-color: rgb(var(--accent-primary));
+  color: rgb(var(--text-secondary));
 }
 
 * {
@@ -47,7 +45,7 @@ body {
 }
 
 body {
-  background-color: var(--background-primary);
+  background-color: rgb(var(--background-primary));
 }
 
 a {

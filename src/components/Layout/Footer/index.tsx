@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { FooterContainer, ThemeToggle } from "./styles";
+import { FooterContainer, SocialsButton, ThemeToggle } from "./styles";
 
-import { Sun, Moon } from "react-feather";
+import { Sun, Moon, GitHub, Instagram, Linkedin } from "react-feather";
+import Link from "next/link";
 
 export default function Footer() {
   const [theme, setTheme] = useState("dark");
@@ -22,10 +23,21 @@ export default function Footer() {
 
   return (
     <FooterContainer>
-      <div>
-        <h1>Footer</h1>
-        <p>Lorem ipsum</p>
-      </div>
+      <Link href="https://github.com/SamuelTobiasFitzlaff" target="_blank">
+        <SocialsButton>
+          <GitHub />
+        </SocialsButton>
+      </Link>
+      <Link href="/" target="_blank">
+        <SocialsButton>
+          <Instagram />
+        </SocialsButton>
+      </Link>
+      <Link href="/" target="_blank">
+        <SocialsButton>
+          <Linkedin />
+        </SocialsButton>
+      </Link>
       <ThemeToggle onClick={toggleTheme}>
         {theme === "dark" ? <Sun /> : <Moon />}
       </ThemeToggle>

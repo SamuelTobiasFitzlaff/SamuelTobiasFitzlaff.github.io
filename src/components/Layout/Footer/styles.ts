@@ -74,14 +74,14 @@ export const SocialsButton = styled(Button).withConfig({
       direction.hover &&
       css`
         animation: ${inRight} 0.25s ease forwards;
-        opacity: 0.25;
+        opacity: 1;
       `}
     ${({ direction }) =>
       direction.direction === 3 &&
       direction.hover &&
       css`
         animation: ${inLeft} 0.25s ease forwards;
-        opacity: 0.25;
+        opacity: 1;
       `}
     
     ${({ direction }) =>
@@ -89,14 +89,14 @@ export const SocialsButton = styled(Button).withConfig({
       !direction.hover &&
       css`
         animation: ${outLeft} 0.25s ease forwards;
-        opacity: 0.25;
+        opacity: 1;
       `}
     ${({ direction }) =>
       direction.direction === 1 &&
       !direction.hover &&
       css`
         animation: ${outRight} 0.25s ease forwards;
-        opacity: 0.25;
+        opacity: 1;
       `}
 
     ${({ direction }) =>
@@ -104,7 +104,7 @@ export const SocialsButton = styled(Button).withConfig({
       direction.direction !== 3 &&
       direction.hover &&
       css`
-        opacity: 0.25;
+        opacity: 1;
       `}
   }
   @media (hover: none) {

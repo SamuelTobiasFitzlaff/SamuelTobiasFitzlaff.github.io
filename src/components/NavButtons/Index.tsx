@@ -15,9 +15,9 @@ import {
 import { ClickAwayListener, Menu, MenuActions, MenuItem } from "@mui/base";
 import { ListActionTypes } from "@mui/base/useList";
 
-import { CheckDirection } from "../../utils/DirectionAware";
+import { CheckDirection } from "@/utils/DirectionAware";
 
-import { Menu as FeatherMenu, ChevronDown } from "react-feather";
+import { Menu as FeatherMenu } from "react-feather";
 import MobileNavigation from "../MobileNavigation";
 
 export default function NavButtons() {

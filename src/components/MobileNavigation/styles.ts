@@ -1,17 +1,28 @@
 import { Button, Popper } from "@mui/base";
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const SlideDown = keyframes`
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 15.5rem;
+  }
+`;
 
 export const Container = styled(Popper)`
   display: none;
   flex-direction: column;
+  overflow: hidden;
 
-  height: calc(100vh - var(--header-height));
-  min-width: 80vw;
+  min-width: 100vw;
 
   background-color: rgb(var(--background-secondary), 0.788);
   backdrop-filter: blur(10px);
   z-index: 102;
+
+  animation: ${SlideDown} 0.2s ease-in-out;
 
   @media screen and (max-width: 40rem) {
     display: flex;
@@ -22,7 +33,7 @@ export const MobileNavButton = styled(Button)`
   font-family: unset;
 
   position: relative;
-  height: 3rem;
+  min-height: 3rem;
   width: 100%;
 
   background-color: transparent;
@@ -44,6 +55,6 @@ export const MobileNavButton = styled(Button)`
   }
 `;
 export const MobileNavLink = styled(Link)`
-  height: 3rem;
+  min-height: 3rem;
   width: 100%;
 `;

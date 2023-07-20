@@ -12,8 +12,8 @@ export const FooterContainer = styled.div`
 `;
 
 export const ThemeToggle = styled(Button)`
-  color: rgb(var(--text-primary));
   background-color: rgb(var(--background-primary));
+  color: rgb(var(--text-primary));
   border: 1px solid transparent;
 
   width: 2.5rem;

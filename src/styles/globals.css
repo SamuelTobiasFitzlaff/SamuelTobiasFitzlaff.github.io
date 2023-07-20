@@ -58,8 +58,11 @@ body {
 }
 
 a {
-  color: inherit;
+  color: rgb(var(--text-secondary));
   text-decoration: none;
+}
+button {
+  color: rgb(var(--text-secondary));
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,5 +1,6 @@
 import { Button, Popper } from "@mui/base";
 import Link from "next/link";
+import { ChevronDown } from "react-feather";
 import styled, { css, keyframes } from "styled-components";
 
 const inLeft = keyframes`
@@ -30,8 +31,12 @@ const DefaultButton = styled(Button).withConfig({
   outline: 1px solid transparent;
   border: none;
   user-select: none;
+
   height: inherit;
   position: relative;
+
+  display: flex;
+  align-items: center;
 
   padding-right: 1rem;
   background-color: transparent;
@@ -141,6 +146,13 @@ export const ButtonContainer = styled.div`
   }
 `;
 
+export const StyledChevron = styled(ChevronDown).withConfig({
+  shouldForwardProp: (prop) => prop !== "open",
+})<{ open: boolean }>`
+  transition: transform 0.2s cubic-bezier(0.6, 0, 0.4, 1);
+  transform: rotateX(${({ open }) => (open ? "180deg" : "0deg")});
+`;
+
 export const StyledPopper = styled(Popper)`
   z-index: 101;
 `;
@@ -164,7 +176,7 @@ export const StyledListbox = styled("ul").withConfig({
   display: flex;
   flex-direction: column;
 
-  min-width: 120px;
+  min-width: 7.875rem;
   border-radius: 0 0 0.25rem 0.25rem;
 
   background: rgb(var(--background-secondary), 0.788);

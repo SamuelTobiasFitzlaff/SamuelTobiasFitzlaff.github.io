@@ -8,14 +8,14 @@ import {
   MenuLink,
   HamburgerMenu,
   ButtonLink,
+  StyledChevron,
 } from "./styles";
-import Link from "next/link";
 import { Menu, MenuActions, MenuItem } from "@mui/base";
 import { ListActionTypes } from "@mui/base/useList";
 
 import { CheckDirection } from "../../utils/DirectionAware";
 
-import { Menu as FeatherMenu } from "react-feather";
+import { Menu as FeatherMenu, ChevronDown } from "react-feather";
 import MobileNavigation from "../MobileNavigation";
 
 export default function NavButtons() {
@@ -117,7 +117,7 @@ export default function NavButtons() {
           }}
           direction={direction[0]}
         >
-          Projects^
+          Projects <StyledChevron open={isOpenProjects} size="1rem" />
         </RegularButton>
 
         <Menu

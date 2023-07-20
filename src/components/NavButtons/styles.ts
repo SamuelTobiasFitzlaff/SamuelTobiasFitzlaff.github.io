@@ -212,17 +212,19 @@ export const ButtonLink = styled(Link)`
   height: inherit;
 `;
 
-export const HamburgerMenu = styled(Button)`
+export const HamburgerMenuContainer = styled.div`
   display: none;
+  height: inherit;
+  @media screen and (max-width: 40rem) {
+    display: block;
+  }
+`;
 
+export const HamburgerMenu = styled(Button)`
   height: inherit;
   aspect-ratio: 1/1;
 
   background-color: transparent;
   outline: 1px solid transparent;
   border: none;
-
-  @media screen and (max-width: 40rem) {
-    display: block;
-  }
 `;

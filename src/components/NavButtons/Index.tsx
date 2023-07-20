@@ -10,8 +10,9 @@ import {
   ButtonLink,
   StyledChevron,
   ChevronContainer,
+  HamburgerMenuContainer,
 } from "./styles";
-import { Menu, MenuActions, MenuItem } from "@mui/base";
+import { ClickAwayListener, Menu, MenuActions, MenuItem } from "@mui/base";
 import { ListActionTypes } from "@mui/base/useList";
 
 import { CheckDirection } from "../../utils/DirectionAware";
@@ -183,19 +184,28 @@ export default function NavButtons() {
           Contact
         </ContactButton>
       </ButtonContainer>
-      <HamburgerMenu
-        onClick={() => {
-          setIsOpenMobile((prev) => !prev);
+      <ClickAwayListener
+        onClickAway={() => {
+          setIsOpenMobile(false);
         }}
-        ref={updateAnchorMobile}
       >
-        <FeatherMenu size="2rem" />
-      </HamburgerMenu>
-      <MobileNavigation
-        open={isOpenMobile}
-        setOpen={setIsOpenMobile}
-        buttonElement={mobileButtonElement}
-      />
+        <HamburgerMenuContainer>
+          <HamburgerMenu
+            onClick={() => {
+              setIsOpenMobile((prev) => !prev);
+            }}
+            ref={updateAnchorMobile}
+          >
+            <FeatherMenu size="2rem" />
+          </HamburgerMenu>
+
+          <MobileNavigation
+            open={isOpenMobile}
+            setOpen={setIsOpenMobile}
+            buttonElement={mobileButtonElement}
+          />
+        </HamburgerMenuContainer>
+      </ClickAwayListener>
     </>
   );
 }

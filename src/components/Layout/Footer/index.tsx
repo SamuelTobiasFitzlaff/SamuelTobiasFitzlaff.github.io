@@ -28,14 +28,17 @@ export default function Footer() {
           <GitHub />
         </SocialsButton>
       </Link>
-      <Link href="/" target="_blank">
-        <SocialsButton>
-          <Instagram />
-        </SocialsButton>
-      </Link>
-      <Link href="/" target="_blank">
+      <Link
+        href="https://www.linkedin.com/in/samuel-tobias-f-78530b157/"
+        target="_blank"
+      >
         <SocialsButton>
           <Linkedin />
+        </SocialsButton>
+      </Link>
+      <Link href="https://instagram.com/samuelfitzlaff32" target="_blank">
+        <SocialsButton>
+          <Instagram />
         </SocialsButton>
       </Link>
       <ThemeToggle onClick={toggleTheme}>

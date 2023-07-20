@@ -37,7 +37,6 @@ export const MobileNavButton = styled(Button)`
   width: 100%;
 
   background-color: transparent;
-  color: var(--text-primary);
 
   border: 1px solid transparent;
 

@@ -9,6 +9,7 @@ import {
   HamburgerMenu,
   ButtonLink,
   StyledChevron,
+  ChevronContainer,
 } from "./styles";
 import { Menu, MenuActions, MenuItem } from "@mui/base";
 import { ListActionTypes } from "@mui/base/useList";
@@ -117,7 +118,10 @@ export default function NavButtons() {
           }}
           direction={direction[0]}
         >
-          Projects <StyledChevron open={isOpenProjects} size="1rem" />
+          <ChevronContainer>
+            Projects
+            <StyledChevron open={isOpenProjects} size="1rem" />
+          </ChevronContainer>
         </RegularButton>
 
         <Menu

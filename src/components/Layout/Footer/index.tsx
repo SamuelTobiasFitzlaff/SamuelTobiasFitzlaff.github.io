@@ -108,7 +108,7 @@ export default function Footer() {
         </SocialsButton>
       </Link>
       <Link
-        href="https://pixelfed.social/i/web/profile/588866334611347493"
+        href="https://pixelfed.social/SamFitzlaff"
         target="_blank"
         tabIndex={-1}
       >

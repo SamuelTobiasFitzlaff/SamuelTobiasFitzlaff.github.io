@@ -1,7 +1,15 @@
+import { PageContainer } from "@/styles/styles";
+import Image from "next/image";
+
 export default function pages() {
   return (
-    <div style={{ textAlign: "center", marginTop: "3rem" }}>
-      <h2>🚧 Website Under Construction! 🚧</h2>
-    </div>
+    <PageContainer>
+      <Image
+        src="/photos/profile.jpg"
+        alt="Profile picture"
+        width={400}
+        height={400}
+      />
+    </PageContainer>
   );
 }

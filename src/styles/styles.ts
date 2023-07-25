@@ -2,8 +2,7 @@ import { Button } from "@mui/base";
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
-  max-width: 75rem;
-  padding-top: 2.5rem;
+  padding: 2.5rem 1rem;
   margin: auto;
 
   img {

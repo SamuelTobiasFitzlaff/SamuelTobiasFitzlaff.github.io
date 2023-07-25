@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  color: rgb(var(--text-primary));
+  color: ${(props) => props.theme.textPrimary};
 
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - ${(props) => props.theme.headerHeight});
   display: grid;
   grid-template-rows: 1fr auto;
-  margin-top: var(--header-height);
+  margin-top: ${(props) => props.theme.headerHeight};
 `;

@@ -1,26 +1,21 @@
-import { useEffect, useState } from "react";
-import { FooterContainer, SocialsButton, ThemeToggle } from "./styles";
+import { useState } from "react";
+import { FooterContainer, SocialsButton } from "./styles";
 
-import { Sun, Moon, GitHub, Instagram, Linkedin } from "react-feather";
+import { GitHub, Instagram, Linkedin } from "react-feather";
 import Link from "next/link";
 import { CheckDirection } from "@/utils/DirectionAware";
-import Image from "next/image";
 import Pixelfed from "@/assets/Pixelfed";
 
+import { useTheme } from "styled-components";
+
 export default function Footer() {
-  const [theme, setTheme] = useState("dark");
+  const theme = useTheme();
   const [direction, setDirection] = useState([
     { direction: 0, hover: false },
     { direction: 0, hover: false },
     { direction: 0, hover: false },
     { direction: 0, hover: false },
   ]);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
 
   const handleMouseEvent = (e: MouseEvent, button: number, hover: boolean) => {
     if (!e) return;
@@ -45,14 +40,6 @@ export default function Footer() {
       return updatedDirection;
     });
   };
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
-  useEffect(() => {
-    setTheme(localStorage.getItem("theme") || "dark");
-  }, []);
 
   return (
     <FooterContainer>
@@ -122,15 +109,12 @@ export default function Footer() {
           direction={direction[3]}
         >
           <Pixelfed
-            fill="rgb(var(--text-secondary))"
+            fill={theme.textSecondary}
             width="2.25rem"
             height="2.25rem"
           />
         </SocialsButton>
       </Link>
-      <ThemeToggle onClick={toggleTheme}>
-        {theme === "dark" ? <Sun /> : <Moon />}
-      </ThemeToggle>
     </FooterContainer>
   );
 }

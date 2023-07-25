@@ -44,7 +44,7 @@ const DefaultButton = styled(Button).withConfig({
   transition: background-color 0.2s ease-in-out;
 
   &:focus-visible {
-    background-color: rgb(var(--accent-primary), 0.25);
+    background-color: ${(props) => props.theme.accentPrimary};
   }
 
   &::after {
@@ -55,7 +55,7 @@ const DefaultButton = styled(Button).withConfig({
 
     width: 100%;
     height: 100%;
-    background-color: rgb(var(--accent-primary));
+    background-color: ${(props) => props.theme.accentPrimaryTransparent};
 
     z-index: -1;
     opacity: 0;
@@ -69,14 +69,14 @@ const DefaultButton = styled(Button).withConfig({
       direction.hover &&
       css`
         animation: ${inRight} 0.25s ease forwards;
-        opacity: 0.25;
+        opacity: 1;
       `}
     ${({ direction }) =>
       direction.direction === 3 &&
       direction.hover &&
       css`
         animation: ${inLeft} 0.25s ease forwards;
-        opacity: 0.25;
+        opacity: 1;
       `}
     
     ${({ direction }) =>
@@ -84,14 +84,14 @@ const DefaultButton = styled(Button).withConfig({
       !direction.hover &&
       css`
         animation: ${outLeft} 0.25s ease forwards;
-        opacity: 0.25;
+        opacity: 1;
       `}
     ${({ direction }) =>
       direction.direction === 1 &&
       !direction.hover &&
       css`
         animation: ${outRight} 0.25s ease forwards;
-        opacity: 0.25;
+        opacity: 1;
       `}
 
     ${({ direction }) =>
@@ -99,7 +99,7 @@ const DefaultButton = styled(Button).withConfig({
       direction.direction !== 3 &&
       direction.hover &&
       css`
-        opacity: 0.25;
+        opacity: 1;
       `}
   }
 
@@ -116,11 +116,11 @@ const DefaultButton = styled(Button).withConfig({
 `;
 
 export const ContactButton = styled(DefaultButton)`
-  color: rgb(var(--accent-secondary));
+  color: ${(props) => props.theme.accentSecondary};
 `;
 
 export const RegularButton = styled(DefaultButton)`
-  color: rgb(var(--text-secondary));
+  color: ${(props) => props.theme.textSecondary};
 `;
 
 export const ButtonContainer = styled.div`
@@ -135,7 +135,7 @@ export const ButtonContainer = styled.div`
 
   ${DefaultButton}:not(:first-child):before, a>${RegularButton}:before {
     content: "";
-    border-left: 1px solid rgb(var(--text-secondary));
+    border-left: 1px solid ${(props) => props.theme.textSecondary};
     margin-right: 1rem;
   }
   @media screen and (max-width: 40rem) {
@@ -153,7 +153,7 @@ export const StyledChevron = styled(ChevronDown).withConfig({
 })<{ open: boolean }>`
   transition: transform 0.2s cubic-bezier(0.6, 0, 0.4, 1);
   transform: rotateX(${({ open }) => (open ? "180deg" : "0deg")});
-  color: rgb(var(--text-secondary));
+  color: ${(props) => props.theme.textSecondary};
 `;
 
 export const StyledPopper = styled(Popper)`
@@ -180,9 +180,9 @@ export const StyledListbox = styled("ul").withConfig({
   min-width: 7.875rem;
   border-radius: 0 0 0.25rem 0.25rem;
 
-  background: rgb(var(--background-secondary), 0.788);
+  background: ${(props) => props.theme.backgroundSecondaryTransparent};
   border: 1px solid transparent;
-  color: rgb(var(--text-secondary));
+  color: ${(props) => props.theme.textSecondary};
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 
@@ -201,10 +201,10 @@ export const MenuLink = styled(Link).withConfig({
   transition: background-color 0.2s ease-in-out;
 
   &:focus-visible {
-    background-color: rgb(var(--accent-primary), 0.25);
+    background-color: ${(props) => props.theme.accentPrimaryTransparent};
   }
   &:hover {
-    background-color: rgb(var(--accent-primary), 0.25);
+    background-color: ${(props) => props.theme.accentPrimaryTransparent};
   }
 `;
 

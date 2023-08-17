@@ -40,15 +40,16 @@ export default function pages() {
         abaixo.
       </p> */}
         <ContactButton>Contact</ContactButton>
+        <br />
+        <br />
+        <h2>🚧 This website is still under construction! 🚧</h2>
       </div>
-      <div>
-        <ProfilePhoto
-          src="/photos/profile.jpg"
-          alt="Profile picture"
-          width={800}
-          height={800}
-        />
-      </div>
+      <ProfilePhoto
+        src="/photos/profile.jpg"
+        alt="Profile picture"
+        width={800}
+        height={800}
+      />
     </HomePageContainer>
   );
 }

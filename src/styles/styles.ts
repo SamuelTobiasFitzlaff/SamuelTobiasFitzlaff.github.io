@@ -9,7 +9,7 @@ export const PageContainer = styled.div`
 
 export const HomePageContainer = styled(PageContainer)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   justify-content: space-around;
   gap: 1rem;
 
@@ -20,9 +20,8 @@ export const HomePageContainer = styled(PageContainer)`
   }
 
   @media screen and (max-width: 40rem) {
-    flex-direction: column;
-    align-items: center;
     font-size: 1rem;
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -35,6 +34,11 @@ export const HomePageTextContainer = styled.div`
 export const ProfilePhoto = styled(Image)`
   object-fit: cover;
   width: 100%;
+  max-height: 40rem;
+  @media screen and (max-width: 40rem) {
+    grid-row: 1;
+    max-height: 25rem;
+  }
 `;
 
 export const ContactButton = styled(Button)`

@@ -3,13 +3,13 @@ import Image from "next/image";
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
-  padding: 2.5rem 1rem;
+  padding: 1rem;
   margin: auto;
 `;
 
 export const HomePageContainer = styled(PageContainer)`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-around;
   gap: 1rem;
 
@@ -26,11 +26,15 @@ export const HomePageContainer = styled(PageContainer)`
   }
 `;
 
+export const HomePageTextContainer = styled.div`
+  text-align: justify;
+  background: ${(props) => props.theme.backgroundSecondaryTransparent};
+  padding: 1rem;
+`;
+
 export const ProfilePhoto = styled(Image)`
-  border-radius: 50%;
-  width: 35%;
-  height: 35%;
   object-fit: cover;
+  width: 100%;
 `;
 
 export const ContactButton = styled(Button)`
@@ -40,8 +44,15 @@ export const ContactButton = styled(Button)`
   margin-top: 1rem;
   background-color: transparent;
   border: 1px solid ${(props) => props.theme.accentSecondary};
-  border-radius: 0.5em;
+
   cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${(props) => props.theme.accentSecondary};
+    color: ${(props) => props.theme.textPrimary};
+  }
 `;
 
 export const ThemeToggle = styled(Button)`

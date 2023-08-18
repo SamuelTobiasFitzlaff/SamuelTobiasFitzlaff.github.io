@@ -18,7 +18,7 @@ export const Container = styled(Popper)`
 
   min-width: 100vw;
 
-  background-color: rgb(var(--background-secondary), 0.788);
+  background-color: ${(props) => props.theme.backgroundSecondaryTransparent};
   backdrop-filter: blur(10px);
   z-index: 102;
 
@@ -50,7 +50,7 @@ export const MobileNavButton = styled(Button)`
     left: 1rem;
     right: 1rem;
     height: 1px;
-    background-color: rgb(var(--accent-primary), 0.25);
+    background-color: ${(props) => props.theme.accentPrimaryTransparent};
   }
 `;
 export const MobileNavLink = styled(Link)`

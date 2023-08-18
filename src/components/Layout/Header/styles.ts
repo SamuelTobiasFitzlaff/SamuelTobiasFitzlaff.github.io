@@ -10,21 +10,22 @@ export const HeaderContainer = styled.div`
   right: 0;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
-    0 0 30px rgb(var(--accent-tertiary)) inset;
-  background-color: rgb(var(--background-secondary), 0.788);
-  color: rgb(var(--text-secondary));
+    0 0 30px ${(props) => props.theme.accentTertiary} inset;
+  background-color: ${(props) => props.theme.backgroundSecondaryTransparent};
+  color: ${(props) => props.theme.textSecondary};
   backdrop-filter: blur(10px);
-  height: var(--header-height);
+  height: ${(props) => props.theme.headerHeight};
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.p`
   display: flex;
   align-items: center;
   font-size: 1.25rem;
+  font-weight: 600;
   margin-left: 1rem;
 
   user-select: none;
@@ -36,7 +37,7 @@ export const Title = styled.h1`
 `;
 
 export const TitleLink = styled(Link)`
-  color: rgb(var(--accent-secondary));
+  color: ${(props) => props.theme.accentSecondary};
   font-size: 1.1em;
 `;
 

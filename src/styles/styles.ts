@@ -31,6 +31,9 @@ export const PageTextContainer = styled.div`
   p {
     text-align: justify;
   }
+  ul {
+    margin: 1rem;
+  }
 `;
 
 export const ProfilePhoto = styled(Image)`

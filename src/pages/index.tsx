@@ -1,24 +1,20 @@
 import {
   ContactButton,
   HomePageContainer,
+  PageTextContainer,
   ProfilePhoto,
 } from "@/styles/styles";
 
 export default function pages() {
   return (
     <HomePageContainer>
-      <div
-        style={{
-          textAlign: "justify",
-          background: "#00000044",
-          padding: "1rem",
-        }}
-      >
+      <PageTextContainer>
         <h1>Welcome to my Portfolio!</h1>
         <p>
-          I am a front-end developer with photography as a hobby. In addition to
-          photography, I have also worked on a few projects in Blender. This
-          website serves as a showcase of my interests and creative pursuits.
+          I am a front-end developer and do some photography as a hobby. In
+          addition to these, I have also worked on a few projects in Blender.
+          This website serves as a showcase of my interests and creative
+          pursuits.
         </p>
         <br />
         <p>
@@ -43,7 +39,7 @@ export default function pages() {
         <br />
         <br />
         <h2>🚧 This website is still under construction! 🚧</h2>
-      </div>
+      </PageTextContainer>
       <ProfilePhoto
         src="/photos/profile.jpg"
         alt="Profile picture"

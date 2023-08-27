@@ -18,6 +18,7 @@ type ThemeType = {
     accentTertiary: string;
     textPrimary: string;
     textSecondary: string;
+    textBackground: string;
     headerHeight: string;
   };
 };
@@ -62,6 +63,7 @@ const theme: ThemeType = {
     accentTertiary: "rgb(48, 71, 94)",
     textPrimary: "rgb(34, 40, 49)",
     textSecondary: "rgb(221, 221, 221)",
+    textBackground: "rgb(255, 255,255, 0.788)",
     headerHeight: "3.75rem",
   },
   dark: {
@@ -74,6 +76,7 @@ const theme: ThemeType = {
     accentTertiary: "rgb(18, 23, 31)",
     textPrimary: "rgb(221, 221, 221)",
     textSecondary: "rgb(221, 221, 221)",
+    textBackground: "rgb(15, 19, 26, 0.788)",
     headerHeight: "3.75rem",
   },
 };

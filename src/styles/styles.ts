@@ -25,10 +25,16 @@ export const HomePageContainer = styled(PageContainer)`
   }
 `;
 
-export const HomePageTextContainer = styled.div`
-  text-align: justify;
-  background: ${(props) => props.theme.backgroundSecondaryTransparent};
+export const PageTextContainer = styled.div`
+  background: ${(props) => props.theme.textBackground};
   padding: 1rem;
+
+  p {
+    text-align: justify;
+  }
+  ul {
+    margin: 1rem;
+  }
 `;
 
 export const ProfilePhoto = styled(Image)`

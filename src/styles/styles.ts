@@ -28,6 +28,7 @@ export const HomePageContainer = styled(PageContainer)`
 export const PageTextContainer = styled.div`
   background: ${(props) => props.theme.textBackground};
   padding: 1rem;
+
   p {
     text-align: justify;
   }

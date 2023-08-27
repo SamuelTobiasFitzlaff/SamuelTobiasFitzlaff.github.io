@@ -1,3 +1,4 @@
+import { ExperienceCard } from "@/components/ExperienceCard";
 import { PageContainer, PageTextContainer } from "@/styles/styles";
 
 export default function experience() {
@@ -16,58 +17,83 @@ export default function experience() {
       >
         <PageTextContainer>
           <h2>Professional Experience</h2>
-          <ul>
-            <li>Monitoria de algoritmos, UDESC</li>
-            <li>Estágio, BPlus Tecnologia</li>
-            <li>Programadord, BPlus Tecnologia</li>
-          </ul>
+          <ExperienceCard
+            title="Monitoria de Algoritmos"
+            place="UDESC"
+            date="06/2019 - 07/2021"
+          />
+          <ExperienceCard
+            title="Estágio"
+            place="BPlus Tecnologia"
+            date="07/2021 - 11/2021"
+          />
+          <ExperienceCard
+            title="Programador"
+            place="BPlus Tecnologia"
+            date="11/2021 - Present"
+          />
         </PageTextContainer>
         <PageTextContainer>
           <h2>Courses</h2>
-          <ul>
-            <li>Hardware, Cenaic</li>
-            <li>Software, Cenaic</li>
-            <li>Inglês para web, Cenaic</li>
-            <li>Digitação, Cenaic</li>
-            <li>Montagem e manutenção de micros, Senac</li>
-            <li>Gestão Empresarial, Instituto Avanza</li>
-            <li>Administração, Instituto Avanza</li>
-            <li>, Instituto Avanza</li>
-            <li>Logistica, Instituto Avanza</li>
-            <li>Cursando sistemas de informação, UDESC</li>
-          </ul>
+          <ExperienceCard
+            title="Sistemas de Informação"
+            place="UDESC"
+            date="2018 - Present"
+          />
+          <ExperienceCard
+            title="Logística"
+            place="Instituto Avanza"
+            date="2018"
+          />
+          <ExperienceCard
+            title="Marketing"
+            place="Instituto Avanza"
+            date="2018"
+          />
+          <ExperienceCard
+            title="Recursos Humanos"
+            place="Instituto Avanza"
+            date="2018"
+          />
+          <ExperienceCard
+            title="Gestão Empresarial"
+            place="Instituto Avanza"
+            date="2017"
+          />
+          <ExperienceCard
+            title="Montagem e manutenção de microcomputadores"
+            place="Senac"
+            date="2015"
+          />
+          <ExperienceCard
+            title="Ificina de informática"
+            place="Secretaria Municipal de Educação"
+            date="2014"
+          />
+          <ExperienceCard
+            title="Informática"
+            place="Cenaic"
+            date="2012 - 2013"
+          />
+          <ExperienceCard title="Hardware" place="Cenaic" date="2012 - 2013" />
         </PageTextContainer>
         <PageTextContainer>
-          <h2>Knowledge</h2>
-          <ul>
-            <li>
-              Tecnologies
-              <ul>
-                <li>React js</li>
-                <li>Next js</li>
-                <li>Javascript</li>
-                <li>Typescript</li>
-                <li>Css</li>
-                <li>Styled coponents</li>
-                <li>Python</li>
-                <li>Blender</li>
-              </ul>
-            </li>
-            <li>
-              Operating systems
-              <ul>
-                <li>GNU/Linux</li>
-                <li>Windows</li>
-              </ul>
-            </li>
-            <li>
-              Languages
-              <ul>
-                <li>Portuguese</li>
-                <li>English</li>
-              </ul>
-            </li>
-          </ul>
+          <h2>Skills</h2>
+          {/* <h3>Technologies</h3> */}
+          <ExperienceCard title="React js" />
+          <ExperienceCard title="Next js" />
+          <ExperienceCard title="Javascript" />
+          <ExperienceCard title="Typescript" />
+          <ExperienceCard title="Css" />
+          <ExperienceCard title="Styled coponents" />
+          <ExperienceCard title="Python" />
+          <ExperienceCard title="Blender" />
+          {/* <h3>Operating systems</h3> */}
+          <ExperienceCard title="GNU/Linux" />
+          <ExperienceCard title="Windows" />
+          {/* <h3>Languages</h3> */}
+          <ExperienceCard title="Portuguese" />
+          <ExperienceCard title="English" />
         </PageTextContainer>
       </div>
     </PageContainer>

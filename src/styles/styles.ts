@@ -25,6 +25,19 @@ export const HomePageContainer = styled(PageContainer)`
   }
 `;
 
+export const ExperiencePageContainer = styled.div`
+  display: grid;
+  grid-template-columns: 4fr 7fr 4fr;
+  gap: 1rem;
+
+  @media screen and (max-width: 92rem) {
+    grid-template-columns: 4fr 7fr 2fr;
+  }
+  @media screen and (max-width: 82rem) {
+    grid-template-columns: auto;
+  }
+`;
+
 export const PageTextContainer = styled.div`
   background: ${(props) => props.theme.textBackground};
   padding: 1rem;

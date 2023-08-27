@@ -18,9 +18,9 @@ export default function experience() {
         <PageTextContainer>
           <h2>Professional Experience</h2>
           <ExperienceCard
-            title="Monitoria de Algoritmos"
-            place="UDESC"
-            date="06/2019 - 07/2021"
+            title="Programador"
+            place="BPlus Tecnologia"
+            date="11/2021 - Present"
           />
           <ExperienceCard
             title="Estágio"
@@ -28,9 +28,9 @@ export default function experience() {
             date="07/2021 - 11/2021"
           />
           <ExperienceCard
-            title="Programador"
-            place="BPlus Tecnologia"
-            date="11/2021 - Present"
+            title="Monitoria de Algoritmos"
+            place="UDESC"
+            date="06/2019 - 07/2021"
           />
         </PageTextContainer>
         <PageTextContainer>

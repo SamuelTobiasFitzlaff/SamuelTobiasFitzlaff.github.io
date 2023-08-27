@@ -66,7 +66,7 @@ export default function experience() {
             date="2015"
           />
           <ExperienceCard
-            title="Ificina de informática"
+            title="Oficina de informática"
             place="Secretaria Municipal de Educação"
             date="2014"
           />

@@ -1,5 +1,9 @@
 import { ExperienceCard } from "@/components/ExperienceCard";
-import { PageContainer, PageTextContainer } from "@/styles/styles";
+import {
+  ExperiencePageContainer,
+  PageContainer,
+  PageTextContainer,
+} from "@/styles/styles";
 
 export default function experience() {
   return (
@@ -8,13 +12,7 @@ export default function experience() {
         <h1>Experience</h1>
       </PageTextContainer>
       <br />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "auto auto auto",
-          gap: "1rem",
-        }}
-      >
+      <ExperiencePageContainer>
         <PageTextContainer>
           <h2>Professional Experience</h2>
           <ExperienceCard
@@ -95,7 +93,7 @@ export default function experience() {
           <ExperienceCard title="Portuguese" />
           <ExperienceCard title="English" />
         </PageTextContainer>
-      </div>
+      </ExperiencePageContainer>
     </PageContainer>
   );
 }

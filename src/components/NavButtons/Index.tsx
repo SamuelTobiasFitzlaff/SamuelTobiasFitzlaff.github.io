@@ -128,7 +128,7 @@ export default function NavButtons() {
         <Menu
           actions={menuActions}
           open={isOpenProjects}
-          onOpenChange={(open) => {
+          onOpenChange={(open: boolean) => {
             setIsOpenProjects(open);
           }}
           anchorEl={projectsButtonElement}

@@ -90,7 +90,8 @@ export default function App({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    setCurrentTheme(localStorage.getItem("theme") as ThemeName);
+    const theme = localStorage.getItem("theme");
+    if (theme) setCurrentTheme(theme as ThemeName);
   }, []);
   return (
     <ThemeProvider theme={theme[currentTheme]}>

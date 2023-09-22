@@ -1,5 +1,6 @@
 import { PageContainer } from "@/styles/styles";
 import { ImageList, ImageListItem } from "@mui/material";
+import { useEffect, useState } from "react";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
@@ -10,15 +11,32 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
   };
 }
 
-export default function gallery() {
+export default function Gallery() {
+  const [cols, setCols] = useState(6);
+  console.log(cols);
+
+  useEffect(() => {
+    function handleResize() {
+      setCols(Math.ceil(window.innerWidth / 320));
+    }
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <PageContainer>
-      <ImageList variant="quilted" cols={6} rowHeight={300}>
+      <ImageList variant="quilted" cols={cols >= 3 ? cols : 1} rowHeight={320}>
         {itemData.map((item) => (
           <ImageListItem
             key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
+            cols={cols >= 3 ? item.cols || 1 : 1}
+            rows={cols >= 3 ? item.rows || 1 : 1}
           >
             <img
               {...srcset(item.img, 300, item.rows, item.cols)}

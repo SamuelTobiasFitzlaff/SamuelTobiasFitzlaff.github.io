@@ -23,13 +23,13 @@ export default function MobileNavigation({
           Dev
         </MobileNavButton>
       </MobileNavLink>
-      <MobileNavLink href="/projects/photos" tabIndex={-1}>
+      <MobileNavLink href="/projects/gallery" tabIndex={-1}>
         <MobileNavButton
           onClick={() => {
             setOpen(false);
           }}
         >
-          Photos
+          Gallery
         </MobileNavButton>
       </MobileNavLink>
       <MobileNavLink href="/projects/blender" tabIndex={-1}>

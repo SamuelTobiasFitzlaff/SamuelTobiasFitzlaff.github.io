@@ -13,7 +13,6 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 
 export default function Gallery() {
   const [cols, setCols] = useState(6);
-  console.log(cols);
 
   useEffect(() => {
     function handleResize() {

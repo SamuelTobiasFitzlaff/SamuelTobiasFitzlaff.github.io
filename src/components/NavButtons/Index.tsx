@@ -144,10 +144,10 @@ export default function NavButtons() {
           </MenuItem>
           <MenuItem
             slots={{ root: MenuLink }}
-            slotProps={{ root: { href: "/projects/photos" } as any }}
+            slotProps={{ root: { href: "/projects/gallery" } as any }}
             onClick={handleProjectsItemClick}
           >
-            Photos
+            Gallery
           </MenuItem>
           <MenuItem
             slots={{ root: MenuLink }}

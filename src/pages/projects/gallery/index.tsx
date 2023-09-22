@@ -17,7 +17,7 @@ export default function Gallery() {
 
   useEffect(() => {
     function handleResize() {
-      setCols(Math.ceil(window.innerWidth / 320));
+      setCols(Math.round(window.innerWidth / 320));
     }
 
     handleResize();

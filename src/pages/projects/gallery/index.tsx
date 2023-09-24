@@ -1,5 +1,6 @@
 import { PageContainer } from "@/styles/styles";
 import { ImageList, ImageListItem } from "@mui/material";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
@@ -42,10 +43,12 @@ export default function Gallery() {
               cols={cols >= 3 ? item.cols || 1 : 1}
               rows={cols >= 3 ? item.rows || 1 : 1}
             >
-              <img
+              <Image
                 {...srcset(item.img, 300, item.rows, item.cols)}
                 alt={item.title}
                 loading="lazy"
+                layout="fill"
+                objectFit="cover"
               />
             </ImageListItem>
           ))}
@@ -56,6 +59,22 @@ export default function Gallery() {
 }
 
 const itemData = [
+  {
+    img: "/photos/gallery/27.jpg",
+    title: "Folhas",
+  },
+  {
+    img: "/photos/gallery/26.jpg",
+    title: "Roda Gigante",
+  },
+  {
+    img: "/photos/gallery/25.jpg",
+    title: "Prédios Balneário Camboriú",
+  },
+  {
+    img: "/photos/gallery/24.jpg",
+    title: "Praia Balneário Camboriú",
+  },
   {
     img: "/photos/gallery/23.jpg",
     title: "Gato",

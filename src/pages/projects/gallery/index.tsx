@@ -57,6 +57,23 @@ export default function Gallery() {
 
 const itemData = [
   {
+    img: "/photos/gallery/27.jpg",
+    title: "Folhas",
+  },
+  {
+    img: "/photos/gallery/26.jpg",
+    title: "Roda Gigante",
+    cols: 2,
+  },
+  {
+    img: "/photos/gallery/25.jpg",
+    title: "Prédios Balneário Camboriú",
+  },
+  {
+    img: "/photos/gallery/24.jpg",
+    title: "Praia Balneário Camboriú",
+  },
+  {
     img: "/photos/gallery/23.jpg",
     title: "Gato",
     rows: 2,

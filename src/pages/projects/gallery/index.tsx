@@ -82,10 +82,14 @@ const itemData = [
     cols: 2,
   },
   {
+    img: "/photos/gallery/28.jpg",
+    title: "Folhas sobre rio",
+  },
+  {
     img: "/photos/gallery/22.jpg",
     title: "Gansos",
+    cols: 2,
   },
-
   {
     img: "/photos/gallery/20.jpg",
     title: "Balões 5",

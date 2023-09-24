@@ -2,6 +2,8 @@ import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 
 export const HeaderContainer = styled.div`
+  font-family: "fira code", monospace;
+
   width: 100%;
   z-index: 100;
   position: fixed;

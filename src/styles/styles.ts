@@ -1,4 +1,5 @@
-import { Button } from "@mui/base";
+import { Button, Modal } from "@mui/base";
+import { Backdrop } from "@mui/material";
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -92,4 +93,61 @@ export const ThemeToggle = styled(Button)`
   border-radius: 100vmax;
 
   cursor: pointer;
+`;
+
+export const StyledModal = styled(Modal)`
+  position: fixed;
+  top: 8vh;
+  left: 10vw;
+  right: 10vw;
+  bottom: 4vh;
+
+  z-index: 1000;
+
+  max-width: 80vw;
+  max-height: 88vh;
+
+  @media screen and (max-width: 56rem) {
+    max-width: 98vw;
+    max-height: 80vh;
+
+    top: 12vh;
+    left: 1vw;
+    right: 1vw;
+    bottom: 8vh;
+  }
+`;
+
+export const StyledBackdrop = styled(Backdrop)`
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.5);
+  -webkit-tap-highlight-color: transparent;
+`;
+
+export const ModalContent = styled.div`
+  outline: 2px solid ${(props) => props.theme.backgroundSecondaryTransparent};
+  background-color: ${(props) => props.theme.backgroundSecondaryTransparent};
+  backdrop-filter: blur(10px);
+
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+`;
+
+export const CloseModalButton = styled(Button)`
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: ${(props) => props.theme.textPrimary};
+  background-color: ${(props) => props.theme.backgroundPrimary};
+  border: 1px solid transparent;
+  border-radius: 100vmax;
+  padding: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+  user-select: none;
 `;

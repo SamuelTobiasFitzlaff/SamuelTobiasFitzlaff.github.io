@@ -25,7 +25,7 @@ type ThemeType = {
 
 const GlobalStyle = createGlobalStyle`
   :root{
-    font-family: "fira code", monospace;
+    font-family: "Roboto", sans-serif;
   }
   * {
     box-sizing: border-box;

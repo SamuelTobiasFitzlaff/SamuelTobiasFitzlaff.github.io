@@ -1,4 +1,11 @@
-import { PageContainer } from "@/styles/styles";
+import {
+  CloseModalButton,
+  ModalContent,
+  PageContainer,
+  StyledBackdrop,
+  StyledModal,
+} from "@/styles/styles";
+import { Button } from "@mui/base";
 import { ImageList, ImageListItem } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -14,6 +21,9 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 
 export default function Gallery() {
   const [cols, setCols] = useState(0);
+  const [clickedImage, setClickedImage] = useState("");
+  const handleOpenModal = (image: string) => setClickedImage(image);
+  const handleCloseModal = () => setClickedImage("");
 
   useEffect(() => {
     function handleResize() {
@@ -42,18 +52,37 @@ export default function Gallery() {
               key={item.img}
               cols={cols >= 3 ? item.cols || 1 : 1}
               rows={cols >= 3 ? item.rows || 1 : 1}
+              onClick={() => handleOpenModal(item.img)}
             >
               <Image
                 {...srcset(item.img, 300, item.rows, item.cols)}
                 alt={item.title}
+                fill
                 loading="lazy"
-                layout="fill"
                 objectFit="cover"
               />
             </ImageListItem>
           ))}
         </ImageList>
       )}
+      <StyledModal
+        aria-labelledby="modal-image"
+        aria-describedby="modal-image"
+        open={!!clickedImage}
+        onClose={handleCloseModal}
+        slots={{ backdrop: StyledBackdrop }}
+      >
+        <ModalContent>
+          <CloseModalButton onClick={handleCloseModal}>X</CloseModalButton>
+          <Image
+            {...srcset(clickedImage, 1000)}
+            alt="image"
+            fill
+            loading="lazy"
+            objectFit="contain"
+          />
+        </ModalContent>
+      </StyledModal>
     </PageContainer>
   );
 }

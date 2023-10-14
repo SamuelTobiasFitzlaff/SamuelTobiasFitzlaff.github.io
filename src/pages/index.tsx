@@ -45,6 +45,7 @@ export default function pages() {
         alt="Profile picture"
         width={800}
         height={800}
+        priority
       />
     </HomePageContainer>
   );

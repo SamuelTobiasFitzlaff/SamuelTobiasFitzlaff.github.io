@@ -59,7 +59,7 @@ export default function Gallery() {
                 alt={item.title}
                 fill
                 loading="lazy"
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
               />
             </ImageListItem>
           ))}

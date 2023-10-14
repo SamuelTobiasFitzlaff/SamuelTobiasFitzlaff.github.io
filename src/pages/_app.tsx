@@ -50,6 +50,25 @@ const GlobalStyle = createGlobalStyle`
   button {
     color: ${(props) => props.theme.textSecondary};
   }
+
+  ::-webkit-scrollbar {
+    width: 0.75rem;
+
+  }
+  ::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.backgroundPrimary};
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.accentPrimary};
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${(props) => props.theme.accentSecondary};
+  }
+  ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-color: ${(props) => props.theme.backgroundSecondaryTransparent};
+    height: ${(props) => props.theme.headerHeight};
+    
+  }
 `;
 
 const theme: ThemeType = {

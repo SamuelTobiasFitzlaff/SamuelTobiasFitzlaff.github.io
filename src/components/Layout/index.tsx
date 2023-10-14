@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps) {
       </Head>
       <Container>
         <Header />
-        <main>{children}</main>
+        <main style={{ position: "relative" }}>{children}</main>
         <Footer />
       </Container>
     </>

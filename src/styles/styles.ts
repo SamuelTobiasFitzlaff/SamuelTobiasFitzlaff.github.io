@@ -86,7 +86,7 @@ export const ThemeToggle = styled(Button)`
 
   position: absolute;
   right: 0.625rem;
-  bottom: 0.625rem;
+  bottom: -3.125rem;
 
   width: 2.5rem;
   height: 2.5rem;

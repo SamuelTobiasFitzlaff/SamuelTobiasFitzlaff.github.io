@@ -36,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     max-width: 100vw;
-    overflow-x: hidden;
   }
 
   body {
@@ -53,7 +52,6 @@ const GlobalStyle = createGlobalStyle`
 
   ::-webkit-scrollbar {
     width: 0.75rem;
-
   }
   ::-webkit-scrollbar-track {
     background: ${(props) => props.theme.backgroundPrimary};
@@ -67,7 +65,6 @@ const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-button:single-button:vertical:decrement {
     background-color: ${(props) => props.theme.backgroundSecondaryTransparent};
     height: ${(props) => props.theme.headerHeight};
-    
   }
 `;
 

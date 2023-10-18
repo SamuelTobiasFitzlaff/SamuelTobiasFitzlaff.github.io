@@ -172,18 +172,20 @@ export default function NavButtons() {
           </RegularButton>
         </ButtonLink>
 
-        <ContactButton
-          href="mailto:samuel.fitzlaff@proton.me"
-          onMouseEnter={(e: MouseEvent) => {
-            handleMouseEvent(e, 2, true);
-          }}
-          onMouseLeave={(e: MouseEvent) => {
-            handleMouseEvent(e, 2, false);
-          }}
-          direction={direction[2]}
-        >
-          Contact
-        </ContactButton>
+
+        <ButtonLink href="mailto:samuel.fitzlaff@proton.me" tabIndex={-1}>
+          <ContactButton
+            onMouseEnter={(e: MouseEvent) => {
+              handleMouseEvent(e, 2, true);
+            }}
+            onMouseLeave={(e: MouseEvent) => {
+              handleMouseEvent(e, 2, false);
+            }}
+            direction={direction[2]}
+          >
+            Contact
+          </ContactButton>
+        </ButtonLink>
       </ButtonContainer>
       <ClickAwayListener
         onClickAway={() => {

@@ -35,7 +35,7 @@ export default function pages() {
         sinta-se à vontade para entrar em contato comigo através do botão
         abaixo.
       </p> */}
-        <ContactButton>Contact</ContactButton>
+        <ContactButton href="mailto:samuel.fitzlaff@proton.me">Contact</ContactButton>
         <br />
         <br />
         <h2>🚧 This website is still under construction! 🚧</h2>

@@ -173,6 +173,7 @@ export default function NavButtons() {
         </ButtonLink>
 
         <ContactButton
+          href="mailto:samuel.fitzlaff@proton.me"
           onMouseEnter={(e: MouseEvent) => {
             handleMouseEvent(e, 2, true);
           }}

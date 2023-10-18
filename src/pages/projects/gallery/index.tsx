@@ -5,14 +5,13 @@ import {
   StyledBackdrop,
   StyledModal,
 } from "@/styles/styles";
-import { Button } from "@mui/base";
 import { ImageList, ImageListItem } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    src: `${image}`,
     srcSet: `${image}?w=${size * cols}&h=${
       size * rows
     }&fit=crop&auto=format&dpr=2 2x`,

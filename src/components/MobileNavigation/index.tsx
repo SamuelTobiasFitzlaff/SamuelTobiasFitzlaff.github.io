@@ -50,14 +50,16 @@ export default function MobileNavigation({
           Experience
         </MobileNavButton>
       </MobileNavLink>
-      <MobileNavButton
-        href="mailto:samuel.fitzlaff@proton.me"          
+
+      <MobileNavLink href="mailto:samuel.fitzlaff@proton.me" tabIndex={-1}>
+      <MobileNavButton        
         onClick={() => {
           setOpen(false);
         }}
       >
         Contato
       </MobileNavButton>
+      </MobileNavLink>
     </Container>
   );
 }

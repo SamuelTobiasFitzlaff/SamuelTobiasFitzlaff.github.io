@@ -52,13 +52,13 @@ export default function MobileNavigation({
       </MobileNavLink>
 
       <MobileNavLink href="mailto:samuel.fitzlaff@proton.me" tabIndex={-1}>
-      <MobileNavButton        
-        onClick={() => {
-          setOpen(false);
-        }}
-      >
-        Contato
-      </MobileNavButton>
+        <MobileNavButton        
+          onClick={() => {
+            setOpen(false);
+          }}
+        >
+          Contato
+        </MobileNavButton>
       </MobileNavLink>
     </Container>
   );

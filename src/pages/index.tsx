@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   ContactButton,
   HomePageContainer,
@@ -35,7 +36,9 @@ export default function pages() {
         sinta-se à vontade para entrar em contato comigo através do botão
         abaixo.
       </p> */}
-        <ContactButton href="mailto:samuel.fitzlaff@proton.me">Contact</ContactButton>
+        <Link href="mailto:samuel.fitzlaff@proton.me">
+          <ContactButton >Contact</ContactButton>
+        </Link>
         <br />
         <br />
         <h2>🚧 This website is still under construction! 🚧</h2>

@@ -51,6 +51,7 @@ export default function MobileNavigation({
         </MobileNavButton>
       </MobileNavLink>
       <MobileNavButton
+        href="mailto:samuel.fitzlaff@proton.me"          
         onClick={() => {
           setOpen(false);
         }}

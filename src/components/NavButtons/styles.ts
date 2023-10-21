@@ -133,7 +133,7 @@ export const ButtonContainer = styled.div`
     padding-left: 1rem;
   }
 
-  ${DefaultButton}:not(:first-child):before, a>${RegularButton}:before {
+  a > ${DefaultButton}:before {
     content: "";
     border-left: 1px solid ${(props) => props.theme.textSecondary};
     margin-right: 1rem;

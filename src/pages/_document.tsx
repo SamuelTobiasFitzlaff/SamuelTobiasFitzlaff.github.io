@@ -44,7 +44,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <GoogleTagManager gtmId="G-JQETSQW95G" />
+        <GoogleTagManager gtmId="GTM-N76VBDZP" />
       </Html>
     );
   }

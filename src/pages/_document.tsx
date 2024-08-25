@@ -6,7 +6,6 @@ import Document, {
   NextScript,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
 export default class MyDocument extends Document {

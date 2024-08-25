@@ -14,15 +14,6 @@ export default function MobileNavigation({
 }: INavBarProps) {
   return (
     <Container open={open} anchorEl={buttonElement}>
-      <MobileNavLink href="/projects/dev" tabIndex={-1}>
-        <MobileNavButton
-          onClick={() => {
-            setOpen(false);
-          }}
-        >
-          Dev
-        </MobileNavButton>
-      </MobileNavLink>
       <MobileNavLink href="/projects/gallery" tabIndex={-1}>
         <MobileNavButton
           onClick={() => {
@@ -30,15 +21,6 @@ export default function MobileNavigation({
           }}
         >
           Gallery
-        </MobileNavButton>
-      </MobileNavLink>
-      <MobileNavLink href="/projects/blender" tabIndex={-1}>
-        <MobileNavButton
-          onClick={() => {
-            setOpen(false);
-          }}
-        >
-          Blender
         </MobileNavButton>
       </MobileNavLink>
       <MobileNavLink href="/experience" tabIndex={-1}>
@@ -51,13 +33,13 @@ export default function MobileNavigation({
         </MobileNavButton>
       </MobileNavLink>
 
-      <MobileNavLink href="mailto:samuel.fitzlaff@proton.me" tabIndex={-1}>
-        <MobileNavButton        
+      <MobileNavLink href="/contact" tabIndex={-1}>
+        <MobileNavButton
           onClick={() => {
             setOpen(false);
           }}
         >
-          Contato
+          Contact
         </MobileNavButton>
       </MobileNavLink>
     </Container>

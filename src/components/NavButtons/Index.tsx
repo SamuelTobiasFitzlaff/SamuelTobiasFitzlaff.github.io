@@ -149,13 +149,6 @@ export default function NavButtons() {
           >
             Gallery
           </MenuItem>
-          <MenuItem
-            slots={{ root: MenuLink }}
-            slotProps={{ root: { href: "/projects/blender" } as any }}
-            onClick={handleProjectsItemClick}
-          >
-            Blender
-          </MenuItem>
         </Menu>
 
         <ButtonLink href="/experience" tabIndex={-1}>
@@ -173,7 +166,7 @@ export default function NavButtons() {
         </ButtonLink>
 
 
-        <ButtonLink href="mailto:samuel.fitzlaff@proton.me" tabIndex={-1}>
+        <ButtonLink href="/contact" tabIndex={-1}>
           <ContactButton
             onMouseEnter={(e: MouseEvent) => {
               handleMouseEvent(e, 2, true);

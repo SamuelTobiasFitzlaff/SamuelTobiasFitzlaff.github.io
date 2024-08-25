@@ -6,7 +6,7 @@ import Document, {
   NextScript,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -39,12 +39,24 @@ export default class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <link rel="shortcut icon" href="/favicon.ico" />
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=G-JQETSQW95G`}
+          />
+
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-JQETSQW95G');
+            `}
+          </Script>
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
-        <GoogleTagManager gtmId="GTM-N76VBDZP" />
       </Html>
     );
   }

@@ -83,7 +83,7 @@ export default function experience() {
           <ExperienceCard title="Javascript" />
           <ExperienceCard title="Typescript" />
           <ExperienceCard title="Css" />
-          <ExperienceCard title="Styled coponents" />
+          <ExperienceCard title="Styled components" />
           <ExperienceCard title="Python" />
           <ExperienceCard title="Blender" />
           {/* <h3>Operating systems</h3> */}

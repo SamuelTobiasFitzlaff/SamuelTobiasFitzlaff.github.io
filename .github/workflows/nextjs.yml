@@ -63,6 +63,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Export Next.js site
+        run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -80,4 +82,4 @@ jobs:
           server: ${{ secrets.SAMUEL_FTP_HOST }}
           username: ${{ secrets.SAMUEL_FTP_USER }}
           password: ${{ secrets.SAMUEL_FTP_PASSWORD }}
-          local-dir: out/
+          local-dir: ./out/

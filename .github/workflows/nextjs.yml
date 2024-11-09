@@ -70,5 +70,4 @@ jobs:
           username: ${{ secrets.SAMUEL_FTP_USER }}
           password: ${{ secrets.SAMUEL_FTP_PASSWORD }}
           local-dir: ./out/
-          remote-dir: /public_html
 

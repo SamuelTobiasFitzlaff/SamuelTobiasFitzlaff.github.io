@@ -71,13 +71,14 @@ jobs:
   # Deployment job
   deploy:
     name: Deploy to FTP
+    runs-on: ubuntu-latest
     steps:
       - name: Sync files to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           server: ${{ secrets.SAMUEL_FTP_HOST }}
           username: ${{ secrets.SAMUEL_FTP_USER }}
           password: ${{ secrets.SAMUEL_FTP_PASSWORD }}
           localDir: out
-          remoteDir: /public_html
+
 

@@ -79,6 +79,7 @@ export default function experience() {
           <h2>Skills</h2>
           {/* <h3>Technologies</h3> */}
           <ExperienceCard title="React js" />
+          <ExperienceCard title="React Native" />
           <ExperienceCard title="Next js" />
           <ExperienceCard title="Javascript" />
           <ExperienceCard title="Typescript" />

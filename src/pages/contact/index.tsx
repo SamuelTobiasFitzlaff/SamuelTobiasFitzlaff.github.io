@@ -12,7 +12,7 @@ export default function contact() {
         <br />
         <p>
           Send me an email, and I&apos;ll get back to you as soon as
-          possible. <a href="mailto:samuel.fitzlaff@proton.me">samuel.fitzlaff@proton.me</a>
+          possible. <a href="mailto:samuel@fitzlaff.com">samuel@fitzlaff.com</a>
         </p>
         <br />
         <p>
